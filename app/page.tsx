@@ -88,12 +88,12 @@ export default function Home() {
     ["05", "Результат", "Сдача проекта и анализ итогов"],
   ];
 
-  const skills = [
-    ["Управление проектами", ["планирование", "контроль сроков", "согласования", "координация команд"]],
-    ["Медиапродакшн", ["фото и видео", "постановка ТЗ", "контроль качества", "финальная сдача"]],
-    ["Операционка", ["подрядчики", "сметы и КП", "логистика", "документы и маршруты"]],
-    ["Инструменты", ["BPMN", "Jira", "Google Sheets", "Yougile", "Notion", "SQL basics"]],
-  ];
+ const skills: [string, string[]][] = [
+  ["Управление проектами", ["планирование", "контроль сроков", "согласования", "координация команд"]],
+  ["Медиапродакшн", ["фото и видео", "постановка ТЗ", "контроль качества", "финальная сдача"]],
+  ["Операционка", ["подрядчики", "сметы и КП", "логистика", "документы и маршруты"]],
+  ["Инструменты", ["BPMN", "Jira", "Google Sheets", "Yougile", "Notion", "SQL basics"]],
+];
 
   const contacts = [
     ["Telegram", "@Rovers1236", "https://t.me/Rovers1236"],
@@ -342,7 +342,7 @@ export default function Home() {
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
               {skills.map(([title, items]) => (
-                <article key={title} className="border border-white/10 bg-[#111111] p-6">
+                <article key={String(title)} className="border border-white/10 bg-[#111111] p-6">
                   <div className="text-lg font-medium text-[#F3F3F3]">{title}</div>
                   <ul className="mt-5 space-y-2 text-[15px] leading-7 text-[#A7A7A7]">
                     {items.map((item) => (
