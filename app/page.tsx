@@ -88,12 +88,24 @@ export default function Home() {
     ["05", "Результат", "Сдача проекта и анализ итогов"],
   ];
 
- const skills: [string, string[]][] = [
-  ["Управление проектами", ["планирование", "контроль сроков", "согласования", "координация команд"]],
-  ["Медиапродакшн", ["фото и видео", "постановка ТЗ", "контроль качества", "финальная сдача"]],
-  ["Операционка", ["подрядчики", "сметы и КП", "логистика", "документы и маршруты"]],
-  ["Инструменты", ["BPMN", "Jira", "Google Sheets", "Yougile", "Notion", "SQL basics"]],
-];
+  const skills: [string, string[]][] = [
+    [
+      "Управление проектами",
+      ["планирование", "контроль сроков", "согласования", "координация команд"],
+    ],
+    [
+      "Медиапродакшн",
+      ["фото и видео", "постановка ТЗ", "контроль качества", "финальная сдача"],
+    ],
+    [
+      "Операционка",
+      ["подрядчики", "сметы и КП", "логистика", "документы и маршруты"],
+    ],
+    [
+      "Инструменты",
+      ["BPMN", "Jira", "Google Sheets", "Yougile", "Notion", "SQL basics"],
+    ],
+  ];
 
   const contacts = [
     ["Telegram", "@Rovers1236", "https://t.me/Rovers1236"],
@@ -129,7 +141,11 @@ export default function Home() {
 
           <nav className="hidden items-center gap-7 md:flex">
             {nav.map(([label, href]) => (
-              <a key={href} href={href} className="text-sm text-[#A7A7A7] transition hover:text-[#F3F3F3]">
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-[#A7A7A7] transition hover:text-[#F3F3F3]"
+              >
                 {label}
               </a>
             ))}
@@ -143,7 +159,7 @@ export default function Home() {
 
           <div className="mx-auto max-w-[1320px] px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 xl:px-16 xl:pb-24 xl:pt-20">
             <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1.15fr)_420px] xl:gap-14">
-              <div>
+              <div className="order-2 xl:order-1">
                 <div className="mb-6 inline-flex items-center gap-3 border border-white/10 bg-[#111111]/85 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#B8B8B8]">
                   <span className="h-2 w-2 bg-[#D62828]" />
                   <span>Продюсер / Project Manager</span>
@@ -159,8 +175,9 @@ export default function Home() {
                 </p>
 
                 <p className="mt-8 max-w-[760px] text-[16px] leading-[1.9] text-[#A7A7A7] md:text-[19px]">
-                  Координирую людей, сроки, подрядчиков, логистику и качество контента. Работаю там, где важно не
-                  просто закрыть задачи, а удержать проект в рабочем контуре от идеи до финальной сдачи.
+                  Координирую людей, сроки, подрядчиков, логистику и качество контента.
+                  Работаю там, где важно не просто закрыть задачи, а удержать проект в
+                  рабочем контуре от идеи до финальной сдачи.
                 </p>
 
                 <div className="mt-8 flex max-w-[760px] flex-wrap gap-3">
@@ -190,19 +207,25 @@ export default function Home() {
                 </div>
               </div>
 
-                         <div className="xl:justify-self-end">
-                <div className="ml-auto w-full max-w-[420px] overflow-hidden rounded-sm border border-white/10 bg-[#111111]">
+              <div className="order-1 xl:order-2 xl:justify-self-end">
+                <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-sm border border-white/10 bg-[#111111] xl:ml-auto">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src="/AGE-4.jpg"
                       alt="Антон Гиззатов"
-                      className="hero-photo h-full w-full object-cover object-[62%_center]"
+                      className="hero-photo h-full w-full object-cover object-[68%_center]"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.38)_100%)]" />
                     <div className="absolute inset-x-0 bottom-0 p-5">
-                      <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">Портрет</div>
-                      <div className="mt-2 text-lg font-medium text-white">Антон Гиззатов</div>
-                      <div className="mt-1 text-sm leading-6 text-[#B9B9B9]">Продюсер / Project Manager</div>
+                      <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+                        Портрет
+                      </div>
+                      <div className="mt-2 text-lg font-medium text-white">
+                        Антон Гиззатов
+                      </div>
+                      <div className="mt-1 text-sm leading-6 text-[#B9B9B9]">
+                        Продюсер / Project Manager
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -216,7 +239,9 @@ export default function Home() {
                   <div className="text-[30px] font-semibold tracking-[-0.05em] text-[#F3F3F3] md:text-[38px]">
                     {value}
                   </div>
-                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">{label}</div>
+                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">
+                    {label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -232,8 +257,8 @@ export default function Home() {
               <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
             </div>
             <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-              Проекты и рабочие ситуации, которые лучше всего показывают мой уровень координации, лидерства,
-              управления командой и контроля результата.
+              Проекты и рабочие ситуации, которые лучше всего показывают мой уровень
+              координации, лидерства, управления командой и контроля результата.
             </p>
           </div>
 
@@ -244,14 +269,22 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-sm border border-white/10 bg-[#111111] p-6 transition hover:-translate-y-0.5 hover:border-white/20"
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">{item.id}</div>
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-[#D62828]">{item.label}</div>
+                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                    {item.id}
+                  </div>
+                  <div className="text-[11px] uppercase tracking-[0.18em] text-[#D62828]">
+                    {item.label}
+                  </div>
                 </div>
 
                 <div className="mb-5 h-[2px] w-10 bg-[#D62828] transition-all group-hover:w-16" />
 
-                <div className="text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">{item.title}</div>
-                <p className="mt-4 text-[15px] leading-7 text-[#BDBDBD]">{item.description}</p>
+                <div className="text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
+                  {item.title}
+                </div>
+                <p className="mt-4 text-[15px] leading-7 text-[#BDBDBD]">
+                  {item.description}
+                </p>
 
                 <ul className="mt-5 space-y-2 text-[15px] leading-7 text-[#D8D8D8]">
                   {item.bullets.map((line) => (
@@ -273,18 +306,27 @@ export default function Home() {
                 <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
               </div>
               <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-                Формальный и проектный опыт, который объединяет медиа, процессы, операционку и управление
-                взаимодействием внутри команды.
+                Формальный и проектный опыт, который объединяет медиа, процессы,
+                операционку и управление взаимодействием внутри команды.
               </p>
             </div>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {experience.map((item) => (
-                <article key={item.company + item.role} className="border border-white/10 bg-[#111111] p-6">
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">Опыт</div>
-                  <div className="mt-3 text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">{item.company}</div>
+                <article
+                  key={item.company + item.role}
+                  className="border border-white/10 bg-[#111111] p-6"
+                >
+                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                    Опыт
+                  </div>
+                  <div className="mt-3 text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
+                    {item.company}
+                  </div>
                   <div className="mt-2 text-sm text-[#A7A7A7]">{item.role}</div>
-                  <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">{item.text}</p>
+                  <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">
+                    {item.text}
+                  </p>
                 </article>
               ))}
             </div>
@@ -300,8 +342,8 @@ export default function Home() {
               <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
             </div>
             <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-              Для меня проект — это не хаотичный набор задач, а управляемая цепочка с понятными этапами,
-              ответственными и критериями качества.
+              Для меня проект — это не хаотичный набор задач, а управляемая цепочка
+              с понятными этапами, ответственными и критериями качества.
             </p>
           </div>
 
@@ -311,15 +353,33 @@ export default function Home() {
                 key={n}
                 className={[
                   "group border bg-[#111111] p-6 transition",
-                  idx === 2 ? "border-[#D62828]/70" : "border-white/10 hover:border-white/20",
+                  idx === 2
+                    ? "border-[#D62828]/70"
+                    : "border-white/10 hover:border-white/20",
                 ].join(" ")}
               >
-                <div className={idx === 2 ? "h-[2px] w-10 bg-[#D62828]" : "h-[2px] w-10 bg-white/12 group-hover:bg-white/20"} />
-                <div className={idx === 2 ? "mt-5 text-[#D62828]" : "mt-5 text-white/35"}>{n}</div>
-                <div className={idx === 2 ? "mt-3 text-[24px] font-semibold text-[#D62828]" : "mt-3 text-[24px] font-semibold text-[#F3F3F3]"}>
+                <div
+                  className={
+                    idx === 2
+                      ? "h-[2px] w-10 bg-[#D62828]"
+                      : "h-[2px] w-10 bg-white/12 group-hover:bg-white/20"
+                  }
+                />
+                <div className={idx === 2 ? "mt-5 text-[#D62828]" : "mt-5 text-white/35"}>
+                  {n}
+                </div>
+                <div
+                  className={
+                    idx === 2
+                      ? "mt-3 text-[24px] font-semibold text-[#D62828]"
+                      : "mt-3 text-[24px] font-semibold text-[#F3F3F3]"
+                  }
+                >
                   {title}
                 </div>
-                <p className="mt-3 max-w-[220px] text-sm leading-6 text-[#A7A7A7]">{text}</p>
+                <p className="mt-3 max-w-[220px] text-sm leading-6 text-[#A7A7A7]">
+                  {text}
+                </p>
               </div>
             ))}
           </div>
@@ -335,8 +395,8 @@ export default function Home() {
                 <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
               </div>
               <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-                Набор навыков, который помогает мне работать на пересечении продюсирования, project
-                management и операционной координации.
+                Набор навыков, который помогает мне работать на пересечении
+                продюсирования, project management и операционной координации.
               </p>
             </div>
 
@@ -369,8 +429,9 @@ export default function Home() {
               </h2>
 
               <p className="mt-7 max-w-[700px] text-[18px] leading-[1.75] text-[#A7A7A7] md:text-[20px]">
-                Если вам нужен человек на роли, связанные с координацией проектов, продакшном, операционным
-                управлением или сборкой команды под результат — буду рад обсудить формат работы.
+                Если вам нужен человек на роли, связанные с координацией проектов,
+                продакшном, операционным управлением или сборкой команды под результат —
+                буду рад обсудить формат работы.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -393,12 +454,20 @@ export default function Home() {
 
             <div className="flex">
               <div className="flex w-full max-w-[360px] flex-col border border-white/10 bg-[#111111] p-7 md:p-8">
-                <div className="mb-6 text-xs uppercase tracking-[0.18em] text-white/45">Контакты</div>
+                <div className="mb-6 text-xs uppercase tracking-[0.18em] text-white/45">
+                  Контакты
+                </div>
                 <div className="flex-1 space-y-6">
                   {contacts.map(([label, value, href], index) => (
-                    <div key={label} className={index < contacts.length - 1 ? "border-b border-white/10 pb-6" : ""}>
+                    <div
+                      key={label}
+                      className={index < contacts.length - 1 ? "border-b border-white/10 pb-6" : ""}
+                    >
                       <div className="text-sm text-[#7E7E7E]">{label}</div>
-                      <a href={href} className="mt-2 inline-block text-[18px] text-[#F3F3F3] transition hover:text-[#D62828]">
+                      <a
+                        href={href}
+                        className="mt-2 inline-block text-[18px] text-[#F3F3F3] transition hover:text-[#D62828]"
+                      >
                         {value}
                       </a>
                     </div>
