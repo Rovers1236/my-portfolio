@@ -2,10 +2,11 @@
 
 export default function Home() {
   const nav = [
-    ["Обо мне", "#about"],
     ["Кейсы", "#cases"],
     ["Подход", "#approach"],
     ["Опыт", "#experience"],
+    ["Процесс", "#process"],
+    ["Навыки", "#skills"],
     ["Контакты", "#contacts"],
   ];
 
@@ -16,23 +17,13 @@ export default function Home() {
     ["3000+", "единиц контента"],
   ];
 
-  const focusCards = [
-    {
-      title: "Сборка структуры",
-      text: "Цели, роли, этапы, зоны ответственности и понятный рабочий ритм.",
-    },
-    {
-      title: "Координация людей",
-      text: "Команда, подрядчики, коммуникация и удержание общего контекста проекта.",
-    },
-    {
-      title: "Контроль результата",
-      text: "Сроки, согласования, качество, финальная сдача и рабочая дисциплина.",
-    },
-    {
-      title: "Системный подход",
-      text: "CRM-логика, прозрачность статусов, точки контроля и цикл улучшений через PDCA.",
-    },
+  const heroTags = [
+    "Продюсирование",
+    "Project Management",
+    "CRM-мышление",
+    "PDCA-подход",
+    "Операционка",
+    "Медиапроекты",
   ];
 
   const featuredCases = [
@@ -74,14 +65,42 @@ export default function Home() {
     },
   ];
 
-  const approach = [
+  const ownership = [
+    {
+      title: "Сборка структуры проекта",
+      text: "Цели, роли, этапы, зоны ответственности и рабочий ритм команды.",
+    },
+    {
+      title: "Координация людей и коммуникации",
+      text: "Связка команды, подрядчиков, заказчика и внутренних процессов без потери контекста.",
+    },
+    {
+      title: "Контроль сроков и результата",
+      text: "Дедлайны, согласования, качество материалов, финальная сдача и управляемый темп работы.",
+    },
+    {
+      title: "CRM-логика процессов",
+      text: "Статусы, этапы, точки контроля и прозрачность движения проекта без потерь в хаосе.",
+    },
+  ];
+
+  const strengths = [
+    "сложные проекты с большим количеством вводных",
+    "координация людей с разными ролями и уровнем ответственности",
+    "медиапродакшн и проекты, где важны и визуал, и система",
+    "выстраивание рабочего контура от идеи до финальной сдачи",
+    "CRM-логика, контроль статусов и прозрачность процессов",
+    "переход от хаоса к управляемому циклу через PDCA-мышление",
+  ];
+
+  const approachCards = [
     {
       title: "CRM как логика порядка",
-      text: "Для меня CRM — это не просто система учёта, а способ держать проект прозрачным: видеть статусы, узкие места, точки реакции и движение задач без потерь в хаосе.",
+      text: "Мне близок CRM-подход как способ держать под контролем не только клиентов, но и саму структуру работы: кто на каком этапе, где узкое место, что требует реакции и где теряется темп. Это мышление про прозрачность, управляемость и контроль движения проекта.",
     },
     {
       title: "PDCA как рабочий цикл",
-      text: "Я смотрю на проект как на цикл: спланировать, запустить, проверить результат, скорректировать систему и перейти к следующему этапу уже сильнее.",
+      text: "Я воспринимаю проект как цикл: спланировать, запустить, проверить результат, скорректировать систему и перейти к следующему этапу уже сильнее. Так я смотрю и на процессы, и на команды, и на медиапродакшн.",
     },
   ];
 
@@ -103,6 +122,40 @@ export default function Home() {
     },
   ];
 
+  const process = [
+    ["01", "Идея", "Цели, формат, ограничения"],
+    ["02", "Команда", "Подбор ролей и распределение задач"],
+    ["03", "Продакшн", "Координация процессов и сроков"],
+    ["04", "Контроль", "Качество, согласования, дедлайны"],
+    ["05", "Результат", "Сдача проекта и анализ итогов"],
+  ] as const;
+
+  const pdca = [
+    ["Plan", "Определяю цель, ограничения, формат, ресурсы, роли и точки контроля."],
+    ["Do", "Запускаю рабочий процесс: команда, коммуникация, подрядчики, продакшн и сроки."],
+    ["Check", "Смотрю на результат через качество, дедлайны, отклонения, узкие места и обратную связь."],
+    ["Act", "Корректирую систему, перераспределяю фокус и усиливаю следующий цикл работы."],
+  ] as const;
+
+  const skills: [string, string[]][] = [
+    [
+      "Управление проектами",
+      ["планирование", "контроль сроков", "согласования", "координация команд"],
+    ],
+    [
+      "Медиапродакшн",
+      ["фото и видео", "постановка ТЗ", "контроль качества", "финальная сдача"],
+    ],
+    [
+      "Операционка",
+      ["подрядчики", "сметы и КП", "логистика", "документы и маршруты"],
+    ],
+    [
+      "Инструменты",
+      ["BPMN", "Jira", "Google Sheets", "Yougile", "Notion", "SQL basics", "CRM-подход"],
+    ],
+  ];
+
   const contacts = [
     ["Telegram", "@Rovers1236", "https://t.me/Rovers1236"],
     ["Телефон", "+7 900 027-27-74", "tel:+79000272774"],
@@ -113,109 +166,19 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden bg-[#0A0A0A] text-[#F3F3F3] selection:bg-[#D62828] selection:text-white">
       <style>{`
         html { scroll-behavior: smooth; }
-
-        .page-grid {
+        .grid-bg {
           background-image:
             linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
           background-size: 40px 40px;
         }
-
-        .hero-radial {
+        .soft-radial {
           background:
-            radial-gradient(circle at 74% 18%, rgba(214,40,40,0.10), transparent 24%),
+            radial-gradient(circle at 76% 18%, rgba(214,40,40,0.10), transparent 24%),
             radial-gradient(circle at 14% 88%, rgba(255,255,255,0.03), transparent 22%);
         }
-
         .hero-photo {
           filter: grayscale(100%) contrast(1.04) brightness(0.90);
-        }
-
-        .bpmn-shell::before {
-          content: "";
-          position: absolute;
-          inset: 9% 5% 12% 5%;
-          border: 1px solid rgba(255,255,255,0.05);
-          pointer-events: none;
-        }
-
-        .bpmn-shell::after {
-          content: "";
-          position: absolute;
-          left: 5%;
-          top: 9%;
-          width: 34px;
-          height: 79%;
-          border-right: 1px solid rgba(255,255,255,0.05);
-          background: rgba(255,255,255,0.012);
-          pointer-events: none;
-        }
-
-        .bpmn-lane-1,
-        .bpmn-lane-2 {
-          position: absolute;
-          left: 5%;
-          width: 90%;
-          border-top: 1px solid rgba(255,255,255,0.045);
-          pointer-events: none;
-        }
-
-        .bpmn-lane-1 { top: 34%; }
-        .bpmn-lane-2 { top: 58%; }
-
-        .bpmn-route-a,
-        .bpmn-route-b,
-        .bpmn-route-c {
-          position: absolute;
-          background: rgba(255,255,255,0.08);
-          pointer-events: none;
-        }
-
-        .bpmn-route-red {
-          position: absolute;
-          background: rgba(214,40,40,0.35);
-          pointer-events: none;
-        }
-
-        .bpmn-node,
-        .bpmn-node-red {
-          position: absolute;
-          height: 30px;
-          border: 1px solid rgba(255,255,255,0.10);
-          background: rgba(255,255,255,0.02);
-          backdrop-filter: blur(2px);
-          pointer-events: none;
-        }
-
-        .bpmn-node-red {
-          border-color: rgba(214,40,40,0.32);
-          background: rgba(214,40,40,0.05);
-        }
-
-        .bpmn-dot,
-        .bpmn-dot-red {
-          position: absolute;
-          width: 14px;
-          height: 14px;
-          border-radius: 9999px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.025);
-          pointer-events: none;
-        }
-
-        .bpmn-dot-red {
-          border-color: rgba(214,40,40,0.32);
-          background: rgba(214,40,40,0.08);
-        }
-
-        .bpmn-tag {
-          position: absolute;
-          font-size: 10px;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.16);
-          pointer-events: none;
-          user-select: none;
         }
       `}</style>
 
@@ -240,43 +203,11 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="relative overflow-hidden hero-radial">
-          <div className="absolute inset-0 page-grid opacity-40" />
-
-          <div className="bpmn-shell absolute inset-0 hidden xl:block">
-            <div className="bpmn-lane-1" />
-            <div className="bpmn-lane-2" />
-
-            <div className="bpmn-tag left-[8%] top-[12%]">Input / context</div>
-            <div className="bpmn-tag left-[8%] top-[37%]">Flow / control</div>
-            <div className="bpmn-tag left-[8%] top-[61%]">Delivery / iteration</div>
-            <div className="bpmn-tag right-[12%] top-[14%]">Process map</div>
-
-            <div className="bpmn-dot left-[14%] top-[28%]" />
-            <div className="bpmn-route-a left-[15%] top-[28.8%] h-[1px] w-[12%]" />
-            <div className="bpmn-node left-[27%] top-[26.7%] w-[110px]" />
-            <div className="bpmn-route-b left-[35.2%] top-[28.8%] h-[1px] w-[10%]" />
-            <div className="bpmn-node left-[45.2%] top-[26.7%] w-[96px]" />
-            <div className="bpmn-route-red left-[52.5%] top-[28.8%] h-[1px] w-[10%]" />
-            <div className="bpmn-node-red left-[62.5%] top-[26.7%] w-[118px]" />
-
-            <div className="bpmn-route-c left-[31%] top-[42%] h-[11%] w-[1px]" />
-            <div className="bpmn-route-c left-[31%] top-[53%] h-[1px] w-[14%]" />
-            <div className="bpmn-node left-[45%] top-[51%] w-[108px]" />
-            <div className="bpmn-route-red left-[53%] top-[53%] h-[1px] w-[12%]" />
-            <div className="bpmn-node-red left-[65%] top-[51%] w-[124px]" />
-
-            <div className="bpmn-route-c left-[71.2%] top-[65%] h-[10%] w-[1px]" />
-            <div className="bpmn-route-c left-[56%] top-[74.5%] h-[1px] w-[15.2%]" />
-            <div className="bpmn-node left-[40.5%] top-[72.4%] w-[110px]" />
-            <div className="bpmn-route-red left-[32%] top-[74.5%] h-[1px] w-[8.5%]" />
-            <div className="bpmn-dot-red left-[30.8%] top-[73.8%]" />
-
-            <div className="absolute right-[6%] top-[16%] h-[56%] w-[27%] border border-white/6" />
-          </div>
+        <section className="relative overflow-hidden soft-radial">
+          <div className="absolute inset-0 grid-bg opacity-40" />
 
           <div className="mx-auto max-w-[1320px] px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 xl:px-16 xl:pb-24 xl:pt-20">
-            <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1.12fr)_420px] xl:gap-14">
+            <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1.15fr)_420px] xl:gap-14">
               <div className="order-2 xl:order-1">
                 <div className="mb-6 inline-flex items-center gap-3 border border-white/10 bg-[#111111]/85 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#B8B8B8]">
                   <span className="h-2 w-2 bg-[#D62828]" />
@@ -297,6 +228,17 @@ export default function Home() {
                   собираю людей, роли, сроки, подрядчиков, контент и коммуникацию в
                   понятную рабочую систему с контролируемым результатом.
                 </p>
+
+                <div className="mt-8 flex max-w-[760px] flex-wrap gap-3">
+                  {heroTags.map((item) => (
+                    <div
+                      key={item}
+                      className="border border-white/10 bg-[#111111]/85 px-3 py-2 text-[12px] uppercase tracking-[0.14em] text-[#B6B6B6]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
 
                 <div className="mt-10 flex flex-wrap gap-4">
                   <a
@@ -346,19 +288,21 @@ export default function Home() {
                   <div className="text-[30px] font-semibold tracking-[-0.05em] text-[#F3F3F3] md:text-[38px]">
                     {value}
                   </div>
-                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">{label}</div>
+                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">
+                    {label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="about" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
-          <div className="grid gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:gap-14">
+        <section className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+          <div className="grid gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
             <div>
               <div className="mb-5 inline-flex items-center gap-3 border border-white/10 bg-[#111111]/85 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#B8B8B8]">
                 <span className="h-2 w-2 bg-[#D62828]" />
-                <span>Обо мне</span>
+                <span>Кто я</span>
               </div>
               <h2 className="max-w-[620px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[52px]">
                 Не просто веду проекты — собираю их в систему
@@ -378,67 +322,34 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {focusCards.map((item) => (
-              <article
-                key={item.title}
-                className="border border-white/10 bg-[#111111] p-6 transition hover:border-white/20"
-              >
-                <div className="mb-5 h-[2px] w-10 bg-[#D62828]" />
-                <div className="text-[22px] font-medium leading-[1.15] tracking-[-0.03em] text-[#F3F3F3]">
-                  {item.title}
-                </div>
-                <p className="mt-4 text-[15px] leading-7 text-[#AFAFAF]">{item.text}</p>
-              </article>
-            ))}
-          </div>
         </section>
 
-        <section id="cases" className="border-y border-white/10 bg-[#0E0E0E]">
+        <section className="border-y border-white/10 bg-[#0E0E0E]">
           <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
             <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
               <div>
                 <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
-                  Ключевые кейсы
+                  Что я беру на себя
                 </h2>
                 <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
               </div>
               <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-                Проекты и рабочие ситуации, которые лучше всего показывают мой уровень
-                координации, лидерства, управления командой и контроля результата.
+                Не отдельные куски задачи, а рабочую систему проекта: структуру,
+                людей, коммуникацию, точки контроля и финальный результат.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {featuredCases.map((item) => (
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {ownership.map((item) => (
                 <article
                   key={item.title}
-                  className="group relative overflow-hidden rounded-sm border border-white/10 bg-[#111111] p-6 transition hover:-translate-y-0.5 hover:border-white/20"
+                  className="border border-white/10 bg-[#111111] p-6 transition hover:border-white/20"
                 >
-                  <div className="mb-5 flex items-center justify-between gap-4">
-                    <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
-                      {item.id}
-                    </div>
-                    <div className="text-right text-[11px] uppercase tracking-[0.18em] text-[#D62828]">
-                      {item.label}
-                    </div>
-                  </div>
-
-                  <div className="mb-5 h-[2px] w-10 bg-[#D62828] transition-all group-hover:w-16" />
-
-                  <div className="text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
+                  <div className="mb-5 h-[2px] w-10 bg-[#D62828]" />
+                  <div className="text-[22px] font-medium leading-[1.15] tracking-[-0.03em] text-[#F3F3F3]">
                     {item.title}
                   </div>
-                  <p className="mt-4 text-[15px] leading-7 text-[#BDBDBD]">
-                    {item.description}
-                  </p>
-
-                  <ul className="mt-5 space-y-2 text-[15px] leading-7 text-[#D8D8D8]">
-                    {item.bullets.map((line) => (
-                      <li key={line}>— {line}</li>
-                    ))}
-                  </ul>
+                  <p className="mt-4 text-[15px] leading-7 text-[#AFAFAF]">{item.text}</p>
                 </article>
               ))}
             </div>
@@ -449,7 +360,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
             <div>
               <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
-                Подход
+                Как я вижу управление проектом
               </h2>
               <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
             </div>
@@ -461,7 +372,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            {approach.map((item) => (
+            {approachCards.map((item) => (
               <article
                 key={item.title}
                 className="border border-white/10 bg-[#111111] p-7 md:p-8"
@@ -478,98 +389,305 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="border-y border-white/10 bg-[#0E0E0E]">
+        <section className="border-y border-white/10 bg-[#0E0E0E]">
           <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
             <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
               <div>
                 <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
-                  Опыт
+                  Мой PDCA-подход
                 </h2>
                 <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
               </div>
               <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
-                Формальный и проектный опыт, который объединяет медиа, процессы,
-                операционку и управление взаимодействием внутри команды.
+                Так я смотрю и на медиапроекты, и на процессы, и на развитие команд:
+                не как на хаос, а как на систему, которую можно собирать, контролировать
+                и усиливать.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {experience.map((item) => (
+            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {pdca.map(([title, text], idx) => (
                 <article
-                  key={item.company + item.role}
-                  className="border border-white/10 bg-[#111111] p-6"
+                  key={title}
+                  className={[
+                    "border bg-[#111111] p-6 transition",
+                    idx === 1 ? "border-[#D62828]/70" : "border-white/10 hover:border-white/20",
+                  ].join(" ")}
                 >
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
-                    Опыт
+                  <div className={idx === 1 ? "h-[2px] w-10 bg-[#D62828]" : "h-[2px] w-10 bg-white/12"} />
+                  <div className={idx === 1 ? "mt-5 text-[#D62828]" : "mt-5 text-white/35"}>
+                    0{idx + 1}
                   </div>
-                  <div className="mt-3 text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
-                    {item.company}
+                  <div
+                    className={
+                      idx === 1
+                        ? "mt-3 text-[26px] font-semibold text-[#D62828]"
+                        : "mt-3 text-[26px] font-semibold text-[#F3F3F3]"
+                    }
+                  >
+                    {title}
                   </div>
-                  <div className="mt-2 text-sm text-[#A7A7A7]">{item.role}</div>
-                  <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">{item.text}</p>
+                  <p className="mt-4 text-[15px] leading-7 text-[#A7A7A7]">{text}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="contacts" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
-          <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_360px] xl:items-stretch xl:gap-14">
+        <section id="cases" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+          <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
             <div>
-              <div className="mb-8 inline-flex items-center gap-3 border border-white/10 bg-[#111111]/85 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#B8B8B8]">
-                <span className="h-2 w-2 bg-[#D62828]" />
-                <span>Контакты</span>
-              </div>
-
-              <h2 className="max-w-[760px] text-[34px] font-semibold leading-[1.04] tracking-[-0.04em] md:text-[56px]">
-                <span className="block">Если вам нужен человек,</span>
-                <span className="block">который умеет собирать хаос в систему</span>
+              <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+                Ключевые кейсы
               </h2>
+              <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
+            </div>
+            <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
+              Проекты и рабочие ситуации, которые лучше всего показывают мой уровень
+              координации, лидерства, управления командой и контроля результата.
+            </p>
+          </div>
 
-              <p className="mt-7 max-w-[760px] text-[18px] leading-[1.75] text-[#A7A7A7] md:text-[20px]">
-                В медиапродакшне, событиях, командах или операционных процессах —
-                буду рад обсудить задачи, формат сотрудничества и то, как выстроить
-                рабочий контур под результат.
-              </p>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {featuredCases.map((item) => (
+              <article
+                key={item.title}
+                className="group relative overflow-hidden rounded-sm border border-white/10 bg-[#111111] p-6 transition hover:-translate-y-0.5 hover:border-white/20"
+              >
+                <div className="mb-5 flex items-center justify-between gap-4">
+                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                    {item.id}
+                  </div>
+                  <div className="text-right text-[11px] uppercase tracking-[0.18em] text-[#D62828]">
+                    {item.label}
+                  </div>
+                </div>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a
-                  href="https://t.me/Rovers1236"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-3 rounded-sm border border-[#D62828] bg-[#D62828] px-6 py-3 text-sm font-medium text-white transition hover:border-[#C51F1F] hover:bg-[#C51F1F]"
-                >
-                  Связаться в Telegram <span aria-hidden>→</span>
-                </a>
-                <a
-                  href="mailto:anton6370@gmail.com"
-                  className="inline-flex items-center gap-3 rounded-sm border border-white/10 bg-[#111111] px-6 py-3 text-sm font-medium text-[#F3F3F3] transition hover:border-white/20 hover:bg-[#161616]"
-                >
-                  Написать на почту <span aria-hidden>→</span>
-                </a>
+                <div className="mb-5 h-[2px] w-10 bg-[#D62828] transition-all group-hover:w-16" />
+
+                <div className="text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
+                  {item.title}
+                </div>
+                <p className="mt-4 text-[15px] leading-7 text-[#BDBDBD]">
+                  {item.description}
+                </p>
+
+                <ul className="mt-5 space-y-2 text-[15px] leading-7 text-[#D8D8D8]">
+                  {item.bullets.map((line) => (
+                    <li key={line}>— {line}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-y border-white/10 bg-[#0E0E0E]">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+            <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
+              <div>
+                <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+                  Где я особенно силён
+                </h2>
+                <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
               </div>
+              <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
+                Лучше всего проявляю себя там, где проекту нужна не только креативная
+                энергия, но и структура, логика движения и управляемый рабочий контур.
+              </p>
             </div>
 
-            <div className="flex">
-              <div className="flex w-full max-w-[360px] flex-col border border-white/10 bg-[#111111] p-7 md:p-8">
-                <div className="mb-6 text-xs uppercase tracking-[0.18em] text-white/45">
-                  Контакты
+            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {strengths.map((item) => (
+                <div
+                  key={item}
+                  className="border border-white/10 bg-[#111111] px-6 py-5 text-[15px] leading-7 text-[#D8D8D8]"
+                >
+                  — {item}
                 </div>
-                <div className="flex-1 space-y-6">
-                  {contacts.map(([label, value, href], index) => (
-                    <div
-                      key={label}
-                      className={index < contacts.length - 1 ? "border-b border-white/10 pb-6" : ""}
-                    >
-                      <div className="text-sm text-[#7E7E7E]">{label}</div>
-                      <a
-                        href={href}
-                        className="mt-2 inline-block text-[18px] text-[#F3F3F3] transition hover:text-[#D62828]"
-                      >
-                        {value}
-                      </a>
-                    </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+          <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
+            <div>
+              <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+                Опыт
+              </h2>
+              <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
+            </div>
+            <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
+              Формальный и проектный опыт, который объединяет медиа, процессы,
+              операционку и управление взаимодействием внутри команды.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {experience.map((item) => (
+              <article
+                key={item.company + item.role}
+                className="border border-white/10 bg-[#111111] p-6"
+              >
+                <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                  Опыт
+                </div>
+                <div className="mt-3 text-2xl font-medium tracking-[-0.03em] text-[#F3F3F3]">
+                  {item.company}
+                </div>
+                <div className="mt-2 text-sm text-[#A7A7A7]">{item.role}</div>
+                <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">
+                  {item.text}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="process" className="border-y border-white/10 bg-[#0E0E0E]">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+            <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
+              <div>
+                <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+                  Как я работаю
+                </h2>
+                <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
+              </div>
+              <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
+                Для меня проект — это не хаотичный набор задач, а управляемая цепочка
+                с понятными этапами, ответственными и критериями качества.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+              {process.map(([n, title, text], idx) => (
+                <div
+                  key={n}
+                  className={[
+                    "group border bg-[#111111] p-6 transition",
+                    idx === 2
+                      ? "border-[#D62828]/70"
+                      : "border-white/10 hover:border-white/20",
+                  ].join(" ")}
+                >
+                  <div
+                    className={
+                      idx === 2
+                        ? "h-[2px] w-10 bg-[#D62828]"
+                        : "h-[2px] w-10 bg-white/12 group-hover:bg-white/20"
+                    }
+                  />
+                  <div className={idx === 2 ? "mt-5 text-[#D62828]" : "mt-5 text-white/35"}>
+                    {n}
+                  </div>
+                  <div
+                    className={
+                      idx === 2
+                        ? "mt-3 text-[24px] font-semibold text-[#D62828]"
+                        : "mt-3 text-[24px] font-semibold text-[#F3F3F3]"
+                    }
+                  >
+                    {title}
+                  </div>
+                  <p className="mt-3 max-w-[220px] text-sm leading-6 text-[#A7A7A7]">
+                    {text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+          <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
+            <div>
+              <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+                Навыки и инструменты
+              </h2>
+              <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
+            </div>
+            <p className="max-w-[760px] text-[15px] leading-8 text-[#8F8F8F]">
+              Набор навыков, который помогает мне работать на пересечении
+              продюсирования, project management и операционной координации.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+            {skills.map(([title, items]) => (
+              <article key={title} className="border border-white/10 bg-[#111111] p-6">
+                <div className="text-lg font-medium text-[#F3F3F3]">{title}</div>
+                <ul className="mt-5 space-y-2 text-[15px] leading-7 text-[#A7A7A7]">
+                  {items.map((item) => (
+                    <li key={item}>— {item}</li>
                   ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contacts" className="border-t border-white/10 bg-[#0E0E0E]">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
+            <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_360px] xl:items-stretch xl:gap-14">
+              <div>
+                <div className="mb-8 inline-flex items-center gap-3 border border-white/10 bg-[#111111]/85 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#B8B8B8]">
+                  <span className="h-2 w-2 bg-[#D62828]" />
+                  <span>Контакты</span>
+                </div>
+
+                <h2 className="max-w-[760px] text-[34px] font-semibold leading-[1.04] tracking-[-0.04em] md:text-[56px]">
+                  <span className="block">Если вам нужен человек,</span>
+                  <span className="block">который умеет собирать хаос в систему</span>
+                </h2>
+
+                <p className="mt-7 max-w-[760px] text-[18px] leading-[1.75] text-[#A7A7A7] md:text-[20px]">
+                  В медиапродакшне, событиях, командах или операционных процессах —
+                  буду рад обсудить задачи, формат сотрудничества и то, как выстроить
+                  рабочий контур под результат.
+                </p>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <a
+                    href="https://t.me/Rovers1236"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-3 rounded-sm border border-[#D62828] bg-[#D62828] px-6 py-3 text-sm font-medium text-white transition hover:border-[#C51F1F] hover:bg-[#C51F1F]"
+                  >
+                    Связаться в Telegram <span aria-hidden>→</span>
+                  </a>
+                  <a
+                    href="mailto:anton6370@gmail.com"
+                    className="inline-flex items-center gap-3 rounded-sm border border-white/10 bg-[#111111] px-6 py-3 text-sm font-medium text-[#F3F3F3] transition hover:border-white/20 hover:bg-[#161616]"
+                  >
+                    Написать на почту <span aria-hidden>→</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="flex w-full max-w-[360px] flex-col border border-white/10 bg-[#111111] p-7 md:p-8">
+                  <div className="mb-6 text-xs uppercase tracking-[0.18em] text-white/45">
+                    Контакты
+                  </div>
+                  <div className="flex-1 space-y-6">
+                    {contacts.map(([label, value, href], index) => (
+                      <div
+                        key={label}
+                        className={
+                          index < contacts.length - 1 ? "border-b border-white/10 pb-6" : ""
+                        }
+                      >
+                        <div className="text-sm text-[#7E7E7E]">{label}</div>
+                        <a
+                          href={href}
+                          className="mt-2 inline-block text-[18px] text-[#F3F3F3] transition hover:text-[#D62828]"
+                        >
+                          {value}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
