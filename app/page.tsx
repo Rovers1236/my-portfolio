@@ -190,13 +190,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
-                <div className="overflow-hidden rounded-sm border border-white/10 bg-[#111111]">
+                         <div className="xl:justify-self-end">
+                <div className="ml-auto w-full max-w-[420px] overflow-hidden rounded-sm border border-white/10 bg-[#111111]">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src="/AGE-4.jpg"
                       alt="Антон Гиззатов"
-                      className="hero-photo h-full w-full object-cover object-center"
+                      className="hero-photo h-full w-full object-cover object-[62%_center]"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.38)_100%)]" />
                     <div className="absolute inset-x-0 bottom-0 p-5">
