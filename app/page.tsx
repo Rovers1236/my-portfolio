@@ -458,12 +458,11 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="overflow-hidden rounded-[24px] border border-white/10 bg-black/20">
-              <img
-                src="/cases/glowbyte/contract-1.png"
-                alt="Фрагмент ТЗ GlowByte"
-                className="w-full object-cover"
-              />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <img src="/cases/glowbyte/contract-1.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
+              <img src="/cases/glowbyte/contract-2.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
+              <img src="/cases/glowbyte/contract-3.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
+              <img src="/cases/glowbyte/contract-4.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
             </div>
             <div className="grid gap-4">
               <img
