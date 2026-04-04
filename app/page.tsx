@@ -166,19 +166,82 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden bg-[#0A0A0A] text-[#F3F3F3] selection:bg-[#D62828] selection:text-white">
       <style>{`
         html { scroll-behavior: smooth; }
+
         .grid-bg {
           background-image:
             linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
           background-size: 40px 40px;
         }
+
         .soft-radial {
           background:
             radial-gradient(circle at 76% 18%, rgba(214,40,40,0.10), transparent 24%),
             radial-gradient(circle at 14% 88%, rgba(255,255,255,0.03), transparent 22%);
         }
+
         .hero-photo {
           filter: grayscale(100%) contrast(1.04) brightness(0.90);
+        }
+
+        .bpmn-line {
+          position: absolute;
+          background: rgba(255,255,255,0.06);
+        }
+
+        .bpmn-line-red {
+          position: absolute;
+          background: rgba(214,40,40,0.35);
+        }
+
+        .bpmn-node {
+          position: absolute;
+          border: 1px solid rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.02);
+          backdrop-filter: blur(2px);
+        }
+
+        .bpmn-node-red {
+          position: absolute;
+          border: 1px solid rgba(214,40,40,0.35);
+          background: rgba(214,40,40,0.05);
+          backdrop-filter: blur(2px);
+        }
+
+        .bpmn-pool {
+          position: absolute;
+          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(255,255,255,0.01);
+        }
+
+        .bpmn-lane {
+          position: absolute;
+          border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .bpmn-event {
+          position: absolute;
+          border-radius: 9999px;
+          border: 1px solid rgba(255,255,255,0.14);
+          background: rgba(255,255,255,0.02);
+        }
+
+        .bpmn-gateway {
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          transform: rotate(45deg);
+          border: 1px solid rgba(255,255,255,0.14);
+          background: rgba(255,255,255,0.02);
+        }
+
+        .bpmn-label {
+          position: absolute;
+          font-size: 10px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.18);
+          user-select: none;
         }
       `}</style>
 
@@ -205,6 +268,64 @@ export default function Home() {
       <main id="top">
         <section className="relative overflow-hidden soft-radial">
           <div className="absolute inset-0 grid-bg opacity-40" />
+
+          <div className="pointer-events-none absolute inset-0 hidden xl:block">
+            <div className="bpmn-pool left-[4%] top-[10%] h-[72%] w-[88%]" />
+
+            <div className="absolute left-[4%] top-[10%] h-[72%] w-[36px] border-r border-white/6 bg-white/[0.012]" />
+
+            <div className="bpmn-lane left-[4%] top-[28%] w-[88%]" />
+            <div className="bpmn-lane left-[4%] top-[46%] w-[88%]" />
+            <div className="bpmn-lane left-[4%] top-[64%] w-[88%]" />
+
+            <div className="bpmn-label left-[6.2%] top-[12%]">Pool</div>
+            <div className="bpmn-label left-[8%] top-[12%]">INPUT / CONTEXT</div>
+            <div className="bpmn-label left-[8%] top-[30%]">TEAM / FLOW</div>
+            <div className="bpmn-label left-[8%] top-[48%]">CONTROL / DELIVERY</div>
+            <div className="bpmn-label left-[8%] top-[66%]">RESULT / ITERATION</div>
+
+            <div className="bpmn-event left-[12%] top-[23%] h-5 w-5" />
+
+            <div className="bpmn-line left-[14%] top-[24.1%] h-[1px] w-[10%]" />
+            <div className="bpmn-line left-[32%] top-[24.1%] h-[1px] w-[8%]" />
+            <div className="bpmn-line left-[48%] top-[24.1%] h-[1px] w-[10%]" />
+            <div className="bpmn-line-red left-[66%] top-[24.1%] h-[1px] w-[8%]" />
+
+            <div className="bpmn-node left-[24%] top-[20%] h-[34px] w-[110px]" />
+            <div className="bpmn-node left-[40%] top-[20%] h-[34px] w-[92px]" />
+            <div className="bpmn-node left-[58%] top-[20%] h-[34px] w-[104px]" />
+            <div className="bpmn-node-red left-[74%] top-[20%] h-[34px] w-[118px]" />
+
+            <div className="bpmn-gateway left-[29.6%] top-[41%]" />
+
+            <div className="bpmn-line left-[30.2%] top-[33.5%] h-[8.5%] w-[1px]" />
+            <div className="bpmn-line left-[30.2%] top-[42.3%] h-[1px] w-[11%]" />
+            <div className="bpmn-line left-[41.2%] top-[42.3%] h-[1px] w-[9%]" />
+            <div className="bpmn-line-red left-[50.2%] top-[42.3%] h-[1px] w-[10%]" />
+
+            <div className="bpmn-node left-[41.5%] top-[38%] h-[34px] w-[98px]" />
+            <div className="bpmn-node left-[55.5%] top-[38%] h-[34px] w-[110px]" />
+            <div className="bpmn-node-red left-[70.5%] top-[38%] h-[34px] w-[124px]" />
+
+            <div className="bpmn-line left-[76.5%] top-[54%] h-[10%] w-[1px]" />
+            <div className="bpmn-gateway left-[75.9%] top-[63.2%]" />
+
+            <div className="bpmn-line left-[60%] top-[66.6%] h-[1px] w-[16%]" />
+            <div className="bpmn-line left-[44%] top-[66.6%] h-[1px] w-[10%]" />
+            <div className="bpmn-line-red left-[27%] top-[66.6%] h-[1px] w-[11%]" />
+
+            <div className="bpmn-node left-[20%] top-[62%] h-[34px] w-[98px]" />
+            <div className="bpmn-node-red left-[38%] top-[62%] h-[34px] w-[108px]" />
+            <div className="bpmn-node left-[54%] top-[62%] h-[34px] w-[118px]" />
+
+            <div className="bpmn-event left-[77.5%] top-[65.2%] h-5 w-5" />
+
+            <div className="absolute right-[6%] top-[14%] h-[62%] w-[28%] border border-white/6" />
+            <div className="absolute right-[9%] top-[18%] h-[54%] w-[22%] border border-white/5" />
+
+            <div className="bpmn-label right-[20%] top-[16%]">PROCESS MAP</div>
+            <div className="bpmn-label right-[12%] top-[72%]">SYSTEM / CONTROL</div>
+          </div>
 
           <div className="mx-auto max-w-[1320px] px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 xl:px-16 xl:pb-24 xl:pt-20">
             <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1.15fr)_420px] xl:gap-14">
@@ -288,9 +409,7 @@ export default function Home() {
                   <div className="text-[30px] font-semibold tracking-[-0.05em] text-[#F3F3F3] md:text-[38px]">
                     {value}
                   </div>
-                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">
-                    {label}
-                  </div>
+                  <div className="mt-2 text-[15px] leading-7 text-[#8C8C8C]">{label}</div>
                 </div>
               ))}
             </div>
@@ -537,9 +656,7 @@ export default function Home() {
                   {item.company}
                 </div>
                 <div className="mt-2 text-sm text-[#A7A7A7]">{item.role}</div>
-                <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">
-                  {item.text}
-                </p>
+                <p className="mt-5 text-[15px] leading-8 text-[#BDBDBD]">{item.text}</p>
               </article>
             ))}
           </div>
