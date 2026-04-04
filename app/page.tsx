@@ -69,7 +69,7 @@ export default function Home() {
       text: "BPMN-моделирование, оптимизация процессов, работа с внутренними актами, согласованиями и переводом сырых данных в понятные управленческие материалы.",
     },
     {
-      company: "MediaBMSTU / УМП",
+      company: "MediaBMSTU",
       role: "Организатор и продюсер внутренних медиапроектов",
       text: "Организация крупных мероприятий, управление оргкомандами, работа с бюджетами, техподдержкой, медиаблоками, дедлайнами и участниками.",
     },
@@ -249,10 +249,10 @@ export default function Home() {
         </section>
 
         <section id="cases" className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 xl:px-16">
-          <div className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-end">
             <div>
-              <h2 className="text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
-                Ключевые кейсы
+              <h2 className="max-w-[420px] text-[34px] font-semibold leading-[1.02] tracking-[-0.04em] md:text-[48px]">
+              Ключевые кейсы
               </h2>
               <div className="mt-5 h-[2px] w-10 bg-[#D62828]" />
             </div>
