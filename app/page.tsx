@@ -341,15 +341,11 @@ export default function Home() {
               >
                 <div>
                   <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Video</div>
-                  <div className="mt-2 text-lg font-semibold">GlowByte — итоговое видео</div>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">
-                    Открыть видео кейса по внешней ссылке.
-                  </p>
-                </div>
-                <span className="mt-6 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200 transition group-hover:bg-white/10">
-                  Смотреть видео
-                </span>
-              </a>
+                  <div className="mt-2 text-lg font-semibold"><iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dvb1limg4&public_id=video_t7tuw6"
+                className="w-full h-[260px] rounded-[24px] border border-white/10"
+                allow="autoplay; fullscreen; encrypted-media"
+              />
             </div>
           </div>
         </section>
@@ -418,15 +414,11 @@ export default function Home() {
             >
               <div>
                 <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Motion</div>
-                <div className="mt-2 text-lg font-semibold">Медиавыпускной — motion 01</div>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">
-                  Открыть видео по внешней ссылке.
-                </p>
-              </div>
-              <span className="mt-6 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200 transition group-hover:bg-white/10">
-                Смотреть видео
-              </span>
-            </a>
+                <div className="mt-2 text-lg font-semibold"><iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dvb1limg4&public_id=motion-1_yehdvl"
+              className="w-full h-[320px] rounded-[24px] border border-white/10"
+              allow="autoplay; fullscreen; encrypted-media"
+            />
             <a
               href="https://disk.yandex.ru/i/DdXi9Xxi6w3hyA"
               target="_blank"
@@ -435,15 +427,11 @@ export default function Home() {
             >
               <div>
                 <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Motion</div>
-                <div className="mt-2 text-lg font-semibold">Медиавыпускной — motion 02</div>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">
-                  Открыть видео по внешней ссылке.
-                </p>
-              </div>
-              <span className="mt-6 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200 transition group-hover:bg-white/10">
-                Смотреть видео
-              </span>
-            </a>
+                <div className="mt-2 text-lg font-semibold"><iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dvb1limg4&public_id=motion-2_njjnep"
+              className="w-full h-[320px] rounded-[24px] border border-white/10"
+              allow="autoplay; fullscreen; encrypted-media"
+            />
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
