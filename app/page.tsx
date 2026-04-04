@@ -109,6 +109,7 @@ export default function Home() {
                 Антон Гиззатов
               </div>
             </div>
+
             <nav className="flex flex-wrap gap-2 text-sm text-zinc-300">
               <a
                 href="#cases"
@@ -183,6 +184,7 @@ export default function Home() {
                     загрузка команды, качество и итоговый результат.
                   </div>
                 </div>
+
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">
                     Что ищу
@@ -217,7 +219,7 @@ export default function Home() {
                 <img
                   src="/AGE-4.jpg"
                   alt="Антон Гиззатов"
-                  className="h-full w-full object-cover object-[80%_center]"
+                  className="h-full w-full object-cover object-[85%_center]"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5">
                   <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">
@@ -310,6 +312,7 @@ export default function Home() {
                   Проектный менеджер и продюсер с сильной операционной базой.
                 </p>
               </div>
+
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="text-sm font-semibold">Что я сделал</div>
                 <p className="mt-2 text-sm leading-6 text-zinc-300">
@@ -317,6 +320,7 @@ export default function Home() {
                   цифрами.
                 </p>
               </div>
+
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="text-sm font-semibold">Как я думаю</div>
                 <p className="mt-2 text-sm leading-6 text-zinc-300">
@@ -411,22 +415,22 @@ export default function Home() {
               <img
                 src="/cases/glowbyte/photo-1.jpg"
                 alt="GlowByte 1"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/glowbyte/photo-2.jpg"
                 alt="GlowByte 2"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/glowbyte/photo-3.jpg"
                 alt="GlowByte 3"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/glowbyte/photo-4.jpg"
                 alt="GlowByte 4"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
             </div>
           </div>
@@ -440,6 +444,7 @@ export default function Home() {
                 выступлений и активностей.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Как выстроил процесс</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -448,6 +453,7 @@ export default function Home() {
                 сдача.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Результат</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -457,34 +463,35 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <img src="/cases/glowbyte/contract-1.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
-              <img src="/cases/glowbyte/contract-2.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
-              <img src="/cases/glowbyte/contract-3.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
-              <img src="/cases/glowbyte/contract-4.png" className="w-full rounded-[24px] border border-white/10 object-cover" />
-            </div>
+          <div className="mt-6 grid gap-4 xl:grid-cols-3">
+            <img
+              src="/cases/glowbyte/contract-1.png"
+              alt="Фрагмент ТЗ GlowByte"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover bg-black/20"
+            />
+
             <div className="grid gap-4">
               <img
                 src="/cases/glowbyte/chat-1.png"
                 alt="Управление командой GlowByte"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/glowbyte/chat-2.png"
                 alt="Распределение зон GlowByte"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
-              />
-              <video
-                src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                className="w-full h-[260px] rounded-[24px] border border-white/10 bg-black object-cover"
+                className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover"
               />
             </div>
+
+            <video
+              src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 bg-black object-cover"
+            />
           </div>
         </section>
 
@@ -528,22 +535,22 @@ export default function Home() {
               <img
                 src="/cases/graduation/photo-1.jpg"
                 alt="Медиавыпускной 1"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/graduation/photo-2.jpg"
                 alt="Медиавыпускной 2"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/graduation/photo-3.jpg"
                 alt="Медиавыпускной 3"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
               <img
                 src="/cases/graduation/photo-4.jpg"
                 alt="Медиавыпускной 4"
-                className="h-full w-full rounded-[24px] object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] object-cover"
               />
             </div>
           </div>
@@ -556,6 +563,7 @@ export default function Home() {
                 подготовку награждения и визуальные носители мероприятия.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Визуальная система</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -564,6 +572,7 @@ export default function Home() {
                 сценарий события.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Результат</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -578,22 +587,22 @@ export default function Home() {
             <img
               src="/cases/graduation/design-poster.jpg"
               alt="Афиша"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
             <img
               src="/cases/graduation/design-badge.png"
               alt="Бейдж"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
             <img
               src="/cases/graduation/design-popsocket.png"
               alt="Попсокет"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
             <img
               src="/cases/graduation/design-shopper.png"
               alt="Шоппер"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
           </div>
 
@@ -601,12 +610,12 @@ export default function Home() {
             <img
               src="/cases/graduation/design-notebook.png"
               alt="Блокнот"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
             <img
               src="/cases/graduation/design-stickerpack.png"
               alt="Стикерпак"
-              className="w-full rounded-[24px] border border-white/10 object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
             />
             <video
               src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4"
@@ -615,7 +624,7 @@ export default function Home() {
               loop
               playsInline
               controls
-              className="w-full h-[320px] rounded-[24px] border border-white/10 bg-black object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 bg-black object-cover"
             />
             <video
               src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4"
@@ -624,7 +633,7 @@ export default function Home() {
               loop
               playsInline
               controls
-              className="w-full h-[320px] rounded-[24px] border border-white/10 bg-black object-cover"
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 bg-black object-cover"
             />
           </div>
 
@@ -633,44 +642,45 @@ export default function Home() {
               <img
                 src="/cases/graduation/script.png"
                 alt="Сценарий"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/timings.png"
                 alt="Тайминги"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/budget.png"
                 alt="Смета"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/tasks.png"
                 alt="Задачи"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
             </div>
+
             <div className="grid gap-4 sm:grid-cols-2">
               <img
                 src="/cases/graduation/chat-1.png"
                 alt="Созвоны и блоки"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/chat-2.png"
                 alt="Общая инфа"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/chat-3.png"
                 alt="Изменения и дедлайны"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/graduation/chat-4.png"
                 alt="Вопросы по квесту"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
             </div>
           </div>
@@ -706,26 +716,27 @@ export default function Home() {
                 улучшения операционной модели.
               </p>
             </div>
+
             <div className="grid gap-4 sm:grid-cols-2">
               <img
                 src="/cases/gf/gf-1.png"
                 alt="Таблица GF 1"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/gf/gf-2.png"
                 alt="Таблица GF 2"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/gf/chat-1.png"
                 alt="Гипотезы 1"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
               <img
                 src="/cases/gf/chat-2.png"
                 alt="Гипотезы 2"
-                className="w-full rounded-[24px] border border-white/10 object-cover"
+                className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover"
               />
             </div>
           </div>
@@ -739,6 +750,7 @@ export default function Home() {
                 точки.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Как думал</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -747,6 +759,7 @@ export default function Home() {
                 упрощению регламентов.
               </p>
             </div>
+
             <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
               <div className="text-sm font-semibold">Результат</div>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -785,11 +798,13 @@ export default function Home() {
                   </span>
                 ))}
               </div>
+
               <p className="mt-5 text-base leading-7 text-zinc-300">
                 Декомпозирую процессы, выделяю роли, точки решений, движение
                 документов и контроль сроков, чтобы убрать хаос и повысить
                 управляемость системы.
               </p>
+
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
                   <div className="text-sm font-semibold">Что сделал</div>
@@ -798,6 +813,7 @@ export default function Home() {
                     согласования и встроил контроль сроков и документов.
                   </p>
                 </div>
+
                 <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
                   <div className="text-sm font-semibold">Что это дало</div>
                   <p className="mt-3 text-sm leading-6 text-zinc-300">
@@ -807,11 +823,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <div className="overflow-hidden rounded-[24px] border border-white/10 bg-black/20">
               <img
                 src="/cases/bpmn/bpmn-1.png"
                 alt="BPMN схема"
-                className="w-full object-cover"
+                className="aspect-[4/3] w-full object-cover"
               />
             </div>
           </div>
