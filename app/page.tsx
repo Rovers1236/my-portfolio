@@ -170,16 +170,16 @@ export default function Home() {
             </div>
 
             <nav className="flex flex-wrap gap-2 text-sm text-zinc-300">
-              <a href="#cases" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">
+              <a href="#cases" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]">
                 Кейсы
               </a>
-              <a href="#value" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">
+              <a href="#value" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]">
                 Ценность
               </a>
-              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">
+              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]">
                 Как работаю
               </a>
-              <a href="#contacts" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">
+              <a href="#contacts" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]">
                 Контакты
               </a>
             </nav>
@@ -461,11 +461,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-[1.1fr_0.9fr_0.9fr]">
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-[1.1fr_0.9fr_0.9fr] auto-rows-fr">
             <img src="/cases/graduation/photo-1.jpg" alt="Медиавыпускной 1" className="aspect-[16/10] w-full rounded-[24px] object-cover xl:col-span-2" />
             <img src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] w-full rounded-[24px] object-cover" />
-            <img src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[4/3] w-full rounded-[24px] object-cover xl:col-span-1" />
-            <img src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[4/3] w-full rounded-[24px] object-cover xl:col-span-2" />
+            <img src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+            <img src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -589,15 +589,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-[1fr_1fr_0.95fr]">
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr">
             <img src="/cases/glowbyte/photo-1.jpg" alt="GlowByte 1" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
             <img src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-            <img src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[16/10] w-full rounded-[24px] object-cover xl:row-span-2" />
+            <img src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
             <img src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-            <img src="/cases/glowbyte/photo-5.jpg" alt="GlowByte 5" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
           </div>
 
-          <div className="mt-4 grid gap-4 xl:grid-cols-3">
+          <div className="mt-4 grid gap-4 xl:grid-cols-3 items-start">
             <div className="group rounded-[24px] border border-white/10 bg-black/20 p-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/15 hover:bg-white/[0.03]">
               <img src="/cases/glowbyte/contract-1.png" alt="Фрагмент ТЗ GlowByte" className="aspect-[4/3] w-full rounded-[18px] object-cover" />
               <div className="px-2 pb-1 pt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 transition duration-300 group-hover:text-zinc-300">Фрагмент ТЗ клиента</div>
@@ -743,16 +742,42 @@ export default function Home() {
         </section>
 
         <section id="contacts" className="mt-16 mb-8 scroll-mt-28 overflow-hidden rounded-[32px] border border-white/10 bg-white text-zinc-950 shadow-[0_18px_70px_rgba(0,0,0,0.34)] sm:scroll-mt-32">
-          <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-8 lg:p-10">
-            <div>
-              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Если вам нужен руководитель проектов / продюсер, который собирает систему, а не просто двигает задачи</h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-700">Я могу подключиться к роли, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Буду рад обсудить роль, формат работы и ожидания.</p>
+          <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch lg:gap-8 lg:p-10">
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
+                <h2 className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Если вам нужен руководитель проектов / продюсер, который собирает систему, а не просто двигает задачи
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-700">
+                  Я могу подключиться к роли, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Буду рад обсудить роль, формат работы и ожидания.
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-[24px] border border-zinc-200 bg-zinc-50 p-5">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">Быстрый вывод</div>
+                <div className="mt-2 text-lg font-semibold text-zinc-950">
+                  Особенно полезен там, где проект нужно быстро собрать, убрать хаос и удержать команду в рабочем ритме.
+                </div>
+              </div>
             </div>
 
-            <div className="grid gap-3 text-sm sm:min-w-[260px]">
-              <a href="mailto:anton6370@gmail.com" className="rounded-2xl border border-zinc-200 px-4 py-3 transition hover:bg-zinc-50">Почта — anton6370@gmail.com</a>
-              <a href="https://t.me/Rovers1236" className="rounded-2xl border border-zinc-200 px-4 py-3 transition hover:bg-zinc-50">Telegram — @Rovers1236</a>
+            <div className="grid gap-4 content-start lg:pl-6">
+              <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
+                <a href="mailto:anton6370@gmail.com" className="mt-3 block text-2xl font-semibold tracking-tight text-zinc-950 break-all sm:text-3xl">
+                  anton6370@gmail.com
+                </a>
+                <div className="mt-2 text-sm text-zinc-600">Для отклика, обсуждения роли и рабочих деталей</div>
+              </div>
+
+              <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
+                <a href="https://t.me/Rovers1236" className="mt-3 block text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">
+                  @Rovers1236
+                </a>
+                <div className="mt-2 text-sm text-zinc-600">Быстрый способ связаться и обсудить следующий шаг</div>
+              </div>
             </div>
           </div>
         </section>
