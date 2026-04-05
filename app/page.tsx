@@ -98,11 +98,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-zinc-100 selection:bg-orange-500/20">
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+      `}</style>
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.16),transparent_26%),radial-gradient(circle_at_20%_20%,rgba(249,115,22,0.12),transparent_24%),linear-gradient(to_bottom,#050505,#0a0a0a_40%,#050505)]" />
       <div className="fixed inset-0 -z-10 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:36px_36px]" />
 
       <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <header className="sticky top-3 z-40 mb-4 rounded-[24px] border border-white/10 bg-black/55 px-4 py-3 backdrop-blur-xl shadow-[0_10px_50px_rgba(0,0,0,0.35)] sm:px-5">
+        <header className="sticky top-3 z-50 mb-4 rounded-[24px] border border-white/10 bg-zinc-950/95 px-4 py-3 backdrop-blur-2xl shadow-[0_10px_50px_rgba(0,0,0,0.45)] sm:px-5">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">Portfolio / Project & Production</div>
@@ -181,7 +186,7 @@ export default function Home() {
               <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6">
                 <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Позиционирование</div>
                 <div className="mt-3 text-2xl font-semibold leading-tight text-white">Не просто делаю контент.</div>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">
+                <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">
                   Выстраиваю систему работы: люди, роли, процессы, контроль, качество, дедлайны, коммуникация и результат на выходе.
                 </p>
               </div>
@@ -241,7 +246,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cases" className="mt-16">
+        <section id="cases" className="mt-16 scroll-mt-28 sm:scroll-mt-32">
           <div className="mb-6">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейсы</div>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Разные типы задач, которые я умею собирать в систему</h2>
@@ -268,11 +273,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="glowbyte" className="mt-16 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:p-8">
+        <section id="glowbyte" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 01</div>
-              <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white">GlowByte — медиа-сопровождение корпоратива</h3>
+              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">GlowByte — медиа-сопровождение корпоратива</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {["6 фотографов", "2 видеографа", "2 видео", "20 reels", "3000+ фото"].map((item) => (
@@ -283,22 +288,22 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300">
+          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
             Организовал фото- и видеапродакшн под корпоративное мероприятие с контентом для отчётности, внутренних коммуникаций и дальнейших публикаций.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Техническое задание</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Работа велась по формализованному ТЗ: отчётный фильм 5–10 минут, ролики для соцсетей, охват ключевых моментов и фиксация выступлений и активностей.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Работа велась по формализованному ТЗ: отчётный фильм 5–10 минут, ролики для соцсетей, охват ключевых моментов и фиксация выступлений и активностей.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Как выстроил процесс</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Собрал команду, распределил зоны съёмки, зафиксировал требования к контенту, выстроил pipeline: съёмка → отбор → обработка → сдача.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собрал команду, распределил зоны съёмки, зафиксировал требования к контенту, выстроил pipeline: съёмка → отбор → обработка → сдача.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">3000+ уникальных фотографий без дублей, 2 итоговых видео, около 20 reels, структурированная выдача материалов в срок.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">3000+ уникальных фотографий без дублей, 2 итоговых видео, около 20 reels, структурированная выдача материалов в срок.</p>
             </div>
           </div>
 
@@ -327,11 +332,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="graduation" className="mt-16 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:p-8">
+        <section id="graduation" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 02</div>
-              <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white">Медиавыпускной — продюсирование мероприятия</h3>
+              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">Медиавыпускной — продюсирование мероприятия</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {["сценарий", "тайминги", "дизайн", "моушен", "смета", "команда"].map((item) => (
@@ -342,22 +347,22 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300">
+          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
             Организовал мероприятие с награждением, сценарием, таймингом, визуальной системой и несколькими направлениями работы, идущими параллельно.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Что собирал</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Сценарий, логику блоков, взаимодействие направлений, тайминги, подготовку награждения и визуальные носители мероприятия.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Сценарий, логику блоков, взаимодействие направлений, тайминги, подготовку награждения и визуальные носители мероприятия.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Визуальная система</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Команда под моим управлением делала дизайн и моушен для сцены, анонсов, носителей и digital-материалов, встроенных в общий сценарий события.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Команда под моим управлением делала дизайн и моушен для сцены, анонсов, носителей и digital-материалов, встроенных в общий сценарий события.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Собранная и синхронизированная система подготовки: сценарий, задачи, тайминги, смета, визуал и команда, работающая в одном ритме.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собранная и синхронизированная система подготовки: сценарий, задачи, тайминги, смета, визуал и команда, работающая в одном ритме.</p>
             </div>
           </div>
 
@@ -413,11 +418,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="gf" className="mt-16 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:p-8">
+        <section id="gf" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 03</div>
-              <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white">GF — выручка, вал и управленческие гипотезы</h3>
+              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">GF — выручка, вал и управленческие гипотезы</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {["план / факт", "ежедневный контроль", "вал", "решения"].map((item) => (
@@ -428,22 +433,22 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300">
+          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
             Систематизировал ежедневные показатели, сравнивал план и факт, отслеживал динамику по точкам и формировал гипотезы для улучшения операционной модели.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Что делал</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Собирал и структурировал данные по выручке, визуализировал план / факт и отклонения, отслеживал динамику и выделял проблемные точки.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собирал и структурировал данные по выручке, визуализировал план / факт и отклонения, отслеживал динамику и выделял проблемные точки.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Как думал</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Не ограничивался цифрами: предлагал гипотезы по обучению, корпоративной культуре, сетям, адаптации новых сотрудников и упрощению регламентов.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Не ограничивался цифрами: предлагал гипотезы по обучению, корпоративной культуре, сетям, адаптации новых сотрудников и упрощению регламентов.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 text-sm leading-6 text-zinc-300">Появилась прозрачная система контроля, база для управленческих решений и более предметный разговор о росте, просадках и точках оптимизации.</p>
+              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Появилась прозрачная система контроля, база для управленческих решений и более предметный разговор о росте, просадках и точках оптимизации.</p>
             </div>
           </div>
 
@@ -455,11 +460,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="bpmn" className="mt-16 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:p-8">
+        <section id="bpmn" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 04</div>
-              <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white">Проектирование и оптимизация процессов (BPMN)</h3>
+              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">Проектирование и оптимизация процессов (BPMN)</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {["5+ ролей", "документооборот", "финансовые потоки", "SLA"].map((item) => (
                   <span key={item} className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-200">
@@ -473,11 +478,11 @@ export default function Home() {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
                   <div className="text-sm font-semibold text-white">Что сделал</div>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль сроков и документов.</p>
+                  <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль сроков и документов.</p>
                 </div>
                 <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
                   <div className="text-sm font-semibold text-white">Что это дало</div>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">Прозрачный процесс, понятные зоны ответственности, снижение риска потерь задач и ускорение согласований.</p>
+                  <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Прозрачный процесс, понятные зоны ответственности, снижение риска потерь задач и ускорение согласований.</p>
                 </div>
               </div>
             </div>
@@ -487,7 +492,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="process" className="mt-16 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+        <section id="process" className="mt-16 scroll-mt-28 grid gap-4 sm:scroll-mt-32 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Подход</div>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">PDCA как рабочая логика, а не красивая аббревиатура</h2>
@@ -501,13 +506,13 @@ export default function Home() {
               <div key={item.step} className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur">
                 <div className="text-sm font-medium uppercase tracking-[0.22em] text-orange-300">{item.step}</div>
                 <div className="mt-3 text-xl font-semibold text-white">{item.title}</div>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">{item.text}</p>
+                <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">{item.text}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="tools" className="mt-16 grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="tools" className="mt-16 scroll-mt-28 grid gap-4 sm:scroll-mt-32 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Инструменты</div>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">То, чем усиливаю управление и продакшн</h2>
@@ -527,7 +532,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contacts" className="mt-16 mb-8 overflow-hidden rounded-[32px] border border-white/10 bg-white text-zinc-950 shadow-[0_18px_70px_rgba(0,0,0,0.34)]">
+        <section id="contacts" className="mt-16 mb-8 scroll-mt-28 overflow-hidden rounded-[32px] border border-white/10 bg-white text-zinc-950 shadow-[0_18px_70px_rgba(0,0,0,0.34)] sm:scroll-mt-32">
           <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-8 lg:p-10">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
