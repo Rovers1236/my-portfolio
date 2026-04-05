@@ -186,7 +186,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr] fade-up delay-1">
+        <section className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.16fr)_minmax(320px,0.84fr)] lg:gap-5 fade-up delay-1">
           <div className="order-2 overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6 lg:order-1 lg:p-8">
             <div className="mb-4 inline-flex rounded-full border border-orange-400/25 bg-orange-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-orange-300">
               Руководитель проектов / продюсер под работодателя
@@ -249,7 +249,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="order-1 grid gap-4 lg:order-2 fade-up delay-2">
+          <div className="order-1 grid auto-rows-fr gap-4 lg:order-2 fade-up delay-2">
             <div className="overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/85 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur">
               <div className="relative aspect-[4/4.6] sm:aspect-[4/4.2] lg:aspect-[4/4.7]">
                 <img src="/AGE-4.jpg" alt="Антон Гиззатов" className="h-full w-full object-cover object-[85%_center]" />
@@ -264,7 +264,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6">
                 <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Что важно понять обо мне</div>
                 <div className="mt-3 text-2xl font-semibold leading-tight text-white">Не просто двигаю задачи.</div>
@@ -285,7 +285,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 fade-up delay-3">
+        <section className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 fade-up delay-3">
           {metrics.map((item) => (
             <div key={item.label} className="rounded-[26px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
               <div className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{item.value}</div>
@@ -294,7 +294,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="mt-4 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+        <section className="mt-5 grid gap-4 lg:grid-cols-2 xl:grid-cols-[0.98fr_1.02fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Где я особенно полезен</div>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -342,7 +342,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-4 grid gap-4 lg:grid-cols-[0.82fr_1.18fr]">
+        <section className="mt-5 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Подхожу вам, если…</div>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Когда моя роль особенно полезна</h2>
@@ -741,43 +741,53 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contacts" className="mt-16 mb-8 scroll-mt-28 overflow-hidden rounded-[32px] border border-white/10 bg-white text-zinc-950 shadow-[0_18px_70px_rgba(0,0,0,0.34)] sm:scroll-mt-32">
-          <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch lg:gap-8 lg:p-10">
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
-                <h2 className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Если вам нужен руководитель проектов / продюсер, который собирает систему, а не просто двигает задачи
-                </h2>
-                <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-700">
-                  Я могу подключиться к роли, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Буду рад обсудить роль, формат работы и ожидания.
-                </p>
-              </div>
+        <section id="contacts" className="mt-16 mb-8 scroll-mt-28 overflow-hidden rounded-[32px] border border-white/10 bg-zinc-950/88 text-zinc-100 shadow-[0_18px_70px_rgba(0,0,0,0.34)] backdrop-blur sm:scroll-mt-32">
+          <div className="grid gap-4 p-5 sm:p-8 xl:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] xl:gap-5 xl:p-10">
+            <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-6 sm:p-7">
+              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
+              <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Обсудим роль, проект или команду, которую нужно быстро собрать в рабочую систему
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300">
+                Подхожу в роли руководителя проектов / продюсера, когда важно одновременно держать людей, сроки, коммуникацию, визуал и результат. Удобнее всего начать с короткого сообщения в Telegram или письма на почту.
+              </p>
 
-              <div className="mt-6 rounded-[24px] border border-zinc-200 bg-zinc-50 p-5">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">Быстрый вывод</div>
-                <div className="mt-2 text-lg font-semibold text-zinc-950">
-                  Особенно полезен там, где проект нужно быстро собрать, убрать хаос и удержать команду в рабочем ритме.
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[22px] border border-white/10 bg-black/20 p-4">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">Фокус</div>
+                  <div className="mt-2 text-sm leading-6 text-zinc-200">
+                    Project management, production, operations, media / event / creative environment.
+                  </div>
+                </div>
+                <div className="rounded-[22px] border border-white/10 bg-black/20 p-4">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">Быстрый вывод</div>
+                  <div className="mt-2 text-sm leading-6 text-zinc-200">
+                    Особенно полезен там, где проект нужно быстро структурировать, убрать хаос и удержать команду в ритме.
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="grid gap-4 content-start lg:pl-6">
-              <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
-                <a href="mailto:anton6370@gmail.com" className="mt-3 block text-2xl font-semibold tracking-tight text-zinc-950 break-all sm:text-3xl">
-                  anton6370@gmail.com
-                </a>
-                <div className="mt-2 text-sm text-zinc-600">Для отклика, обсуждения роли и рабочих деталей</div>
-              </div>
+            <div className="grid gap-4 content-start sm:grid-cols-2 xl:grid-cols-1">
+              <a
+                href="https://t.me/Rovers1236"
+                className="group rounded-[28px] border border-orange-400/20 bg-orange-500/10 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-0.5 hover:border-orange-300/35 hover:bg-orange-500/14"
+              >
+                <div className="text-[11px] uppercase tracking-[0.22em] text-orange-200/80">Telegram</div>
+                <div className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">@Rovers1236</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">Основной и самый быстрый канал связи для первого контакта и обсуждения следующего шага.</div>
+                <div className="mt-4 text-sm font-medium text-orange-200 transition duration-300 group-hover:translate-x-0.5">Написать в Telegram →</div>
+              </a>
 
-              <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
-                <a href="https://t.me/Rovers1236" className="mt-3 block text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">
-                  @Rovers1236
-                </a>
-                <div className="mt-2 text-sm text-zinc-600">Быстрый способ связаться и обсудить следующий шаг</div>
-              </div>
+              <a
+                href="mailto:anton6370@gmail.com"
+                className="group rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.06]"
+              >
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
+                <div className="mt-3 text-xl font-semibold tracking-tight text-white break-all sm:text-2xl">anton6370@gmail.com</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-300">Для откликов, обсуждения роли, задач, формата сотрудничества и рабочих деталей.</div>
+                <div className="mt-4 text-sm font-medium text-zinc-200 transition duration-300 group-hover:translate-x-0.5">Написать на почту →</div>
+              </a>
             </div>
           </div>
         </section>
