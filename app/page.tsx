@@ -155,10 +155,10 @@ export default function Home() {
 
       <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.16),transparent_26%),radial-gradient(circle_at_20%_20%,rgba(249,115,22,0.12),transparent_24%),linear-gradient(to_bottom,#050505,#0a0a0a_40%,#050505)]" />
       <div className="fixed inset-0 -z-20 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:36px_36px]" />
-      <div className="fixed inset-x-0 top-0 z-40 h-28 bg-black/96 backdrop-blur-2xl pointer-events-none sm:h-32" />
+      <div className="fixed inset-x-0 top-0 z-40 h-28 bg-gradient-to-b from-black via-black/92 to-transparent pointer-events-none sm:h-32" />
 
-      <div className="mx-auto max-w-7xl px-4 pb-6 pt-24 sm:px-6 sm:pt-28 lg:px-8">
-        <header className="fixed left-4 right-4 top-3 z-50 rounded-[24px] border border-white/10 bg-zinc-950/98 px-4 py-3 backdrop-blur-2xl shadow-[0_10px_50px_rgba(0,0,0,0.55)] sm:left-6 sm:right-6 sm:px-5 lg:left-8 lg:right-8 fade-up">
+      <div className="mx-auto max-w-7xl px-4 pb-6 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+        <header className="fixed left-4 right-4 top-3 z-50 rounded-[24px] border border-white/10 bg-zinc-950/94 px-4 py-3 backdrop-blur-2xl shadow-[0_16px_60px_rgba(0,0,0,0.45)] sm:left-6 sm:right-6 sm:px-5 lg:left-8 lg:right-8 fade-up">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
@@ -594,6 +594,7 @@ export default function Home() {
             <img src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
             <img src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[16/10] w-full rounded-[24px] object-cover xl:row-span-2" />
             <img src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+            <img src="/cases/glowbyte/photo-5.jpg" alt="GlowByte 5" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
           </div>
 
           <div className="mt-4 grid gap-4 xl:grid-cols-3">
@@ -611,7 +612,7 @@ export default function Home() {
                 <div className="px-2 pb-1 pt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 transition duration-300 group-hover:text-zinc-300">Распределение зон</div>
               </div>
             </div>
-            <div className="group rounded-[24px] border border-white/10 bg-black/20 p-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/15 hover:bg-white/[0.03]">
+            <div className="group rounded-[24px] border border-white/10 bg-black/20 p-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/15 hover:bg-white/[0.03] self-start">
               <video src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4" autoPlay muted loop playsInline controls className="aspect-[4/3] w-full rounded-[18px] bg-black object-cover" />
               <div className="px-2 pb-1 pt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 transition duration-300 group-hover:text-zinc-300">Итоговое видео кейса</div>
             </div>
@@ -750,7 +751,7 @@ export default function Home() {
             </div>
 
             <div className="grid gap-3 text-sm sm:min-w-[260px]">
-              <a href="mailto:anton6370@gmail.com" className="rounded-2xl border border-zinc-200 px-4 py-3 transition hover:bg-zinc-50">anton6370@gmail.com</a>
+              <a href="mailto:anton6370@gmail.com" className="rounded-2xl border border-zinc-200 px-4 py-3 transition hover:bg-zinc-50">Почта — anton6370@gmail.com</a>
               <a href="https://t.me/Rovers1236" className="rounded-2xl border border-zinc-200 px-4 py-3 transition hover:bg-zinc-50">Telegram — @Rovers1236</a>
             </div>
           </div>
@@ -759,4 +760,3 @@ export default function Home() {
     </main>
   );
 }
-
