@@ -1,9 +1,9 @@
 export default function Home() {
   const metrics = [
-    { value: "12+", label: "проектов в работе и на запуске" },
-    { value: "30", label: "человек в командах и подрядчиках" },
-    { value: "2M ₽", label: "бюджет закупок и организации" },
+    { value: "Проджект / продюсер", label: "роль, которую я продаю" },
     { value: "12 000+", label: "участников в крупных проектах" },
+    { value: "2M ₽", label: "бюджеты закупок и организации" },
+    { value: "30", label: "человек в командах и подрядчиках" },
   ];
 
   const highlights = [
@@ -15,34 +15,52 @@ export default function Home() {
     "Контроль качества",
   ];
 
-  const roles = [
-    "Project Manager",
-    "Producer",
-    "Operations Manager",
-    "Production Lead",
+  const fitItems = [
+    "в проекте много людей, но мало структуры",
+    "есть контент и задачи, но нет системы",
+    "команда перегружена и всё держится на ручном контроле",
+    "нужен человек, который свяжет продакшен, команду и процесс",
   ];
 
-  const contexts = [
-    "Корпоративные мероприятия",
-    "Университетские и образовательные проекты",
-    "Медиа-команды и подрядчики",
-    "Процессы, регламенты и контроль исполнения",
+  const valueItems = [
+    "прозрачный процесс вместо хаоса",
+    "понятные роли и зоны ответственности",
+    "контроль сроков, качества и загрузки",
+    "результат, который не держится на ручном героизме",
+  ];
+
+  const thinkingItems = [
+    "сначала собираю систему, потом масштаб",
+    "хаос нельзя ускорять — его нужно структурировать",
+    "хороший процесс снимает зависимость от героизма команды",
+    "креатив должен жить внутри управляемой логики",
+  ];
+
+  const artifacts = [
+    "ТЗ",
+    "сценарии",
+    "тайминги",
+    "сметы",
+    "дашборды и таблицы",
+    "BPMN-схемы",
+    "командные коммуникации",
+    "контрольные документы",
   ];
 
   const caseCards = [
     {
-      id: "glowbyte",
-      title: "GlowByte",
-      desc: "Коммерческий продакшн под ТЗ клиента",
-      metrics: ["6 фотографов", "2 видеографа", "3000+ фото"],
-      image: "/cases/glowbyte-cover.jpg",
-    },
-    {
       id: "graduation",
       title: "Медиавыпускной",
-      desc: "Продюсирование, сценарий и управление визуальной системой",
-      metrics: ["сценарий", "тайминги", "дизайн / моушен"],
+      desc: "Флагманский кейс: продюсирование, сценарий, визуальная система, тайминг и координация команды",
+      metrics: ["флагман", "сценарий", "motion / дизайн"],
       image: "/cases/graduation-cover.jpg",
+    },
+    {
+      id: "glowbyte",
+      title: "GlowByte",
+      desc: "Коммерческий кейс: работа по ТЗ клиента и управление продакшен-командой",
+      metrics: ["бренд", "ТЗ", "команда"],
+      image: "/cases/glowbyte-cover.jpg",
     },
     {
       id: "gf",
@@ -55,31 +73,31 @@ export default function Home() {
       id: "bpmn",
       title: "BPMN",
       desc: "Проектирование бизнес-процессов и логики работы",
-      metrics: ["5+ ролей", "документы", "SLA"],
+      metrics: ["процессы", "роли", "SLA"],
       image: "/cases/bpmn-cover.png",
     },
   ];
 
   const process = [
     {
-      step: "Plan",
-      title: "Собираю вводные и убираю туман",
-      text: "Перевожу абстрактную задачу в понятную систему: роли, этапы, дедлайны, риски, контрольные точки и результат на выходе.",
+      step: "01",
+      title: "Разбираю задачу и контекст",
+      text: "Собираю вводные, ограничения, роли, ожидания и понимаю, где у проекта главные точки хаоса и риска.",
     },
     {
-      step: "Do",
-      title: "Запускаю работу без хаоса",
-      text: "Собираю людей, распределяю зоны ответственности, ставлю понятные задачи и держу процесс в рабочем ритме.",
+      step: "02",
+      title: "Собираю структуру",
+      text: "Выстраиваю систему: люди, этапы, сроки, зоны ответственности, документы, точки контроля и логику взаимодействия.",
     },
     {
-      step: "Check",
-      title: "Смотрю не на ощущение, а на результат",
-      text: "Проверяю сроки, качество, загрузку команды, слабые места процесса, узкие горлышки и то, где система начинает ломаться.",
+      step: "03",
+      title: "Запускаю и удерживаю процесс",
+      text: "Синхронизирую команду, держу темп, снимаю рассинхрон и довожу проект до управляемого результата.",
     },
     {
-      step: "Act",
-      title: "Докручиваю систему до следующей версии",
-      text: "Фиксирую выводы, меняю правила работы, корректирую логику взаимодействия и делаю следующий цикл сильнее предыдущего.",
+      step: "04",
+      title: "Анализирую и усиливаю",
+      text: "Смотрю, где система просела, что можно оптимизировать, и собираю следующую версию процесса сильнее предыдущей.",
     },
   ];
 
@@ -98,11 +116,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-zinc-100 selection:bg-orange-500/20">
-      <style jsx global>{`
-        html {
-          scroll-behavior: smooth;
-        }
-      `}</style>
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.16),transparent_26%),radial-gradient(circle_at_20%_20%,rgba(249,115,22,0.12),transparent_24%),linear-gradient(to_bottom,#050505,#0a0a0a_40%,#050505)]" />
       <div className="fixed inset-0 -z-10 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:36px_36px]" />
 
@@ -116,8 +129,8 @@ export default function Home() {
 
             <nav className="flex flex-wrap gap-2 text-sm text-zinc-300">
               <a href="#cases" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Кейсы</a>
-              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Процесс</a>
-              <a href="#tools" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Инструменты</a>
+              <a href="#value" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Ценность</a>
+              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Как работаю</a>
               <a href="#contacts" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.07]">Контакты</a>
             </nav>
           </div>
@@ -126,7 +139,7 @@ export default function Home() {
         <section className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="order-2 overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6 lg:order-1 lg:p-8">
             <div className="mb-4 inline-flex rounded-full border border-orange-400/25 bg-orange-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-orange-300">
-              Собираю хаос в работающую систему
+              Проджект / продюсер под работодателя
             </div>
 
             <div className="mb-5 flex flex-wrap gap-2">
@@ -138,35 +151,35 @@ export default function Home() {
             </div>
 
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Проектный менеджер и продюсер,
-              <span className="mt-2 block text-zinc-400">который строит процесс, а не только закрывает задачи.</span>
+              Проджект / продюсер,
+              <span className="mt-2 block text-zinc-400">который собирает креативные и event-проекты в работающую систему.</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg">
-              Управляю продакшном, командами, логистикой и операционкой. Соединяю креатив, процессное мышление и контроль результата — от первой вводной до стабильной рабочей системы.
+            <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg">
+              Моя сильная сторона — соединять команду, процессы, визуал, сроки и контроль в одну управляемую логику. Помогаю не просто двигать проект, а снижать хаос и доводить до предсказуемого результата.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Подход</div>
-                <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Иду от задачи к системе: роли, процессы, контрольные точки, загрузка команды, качество и итоговый результат.
-                </div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Роль</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">Проджект / продюсер для media, event и креативных проектов.</div>
               </div>
               <div className="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что ищу</div>
-                <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Роли на стыке project management, production, operations и развития процессов.
-                </div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Польза</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">Собираю людей, процессы и контроль в одну рабочую систему.</div>
+              </div>
+              <div className="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Proof</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">GlowByte, Медиавыпускной, GF, BPMN и реальные артефакты управления.</div>
               </div>
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a href="#cases" className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.01]">
-                Смотреть кейсы
+              <a href="#graduation" className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.01]">
+                Смотреть флагманский кейс
               </a>
               <a href="#contacts" className="inline-flex items-center justify-center rounded-2xl border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.05]">
-                Связаться
+                Обсудить роль
               </a>
             </div>
           </div>
@@ -176,7 +189,7 @@ export default function Home() {
               <div className="relative aspect-[4/4.6] sm:aspect-[4/4.2] lg:aspect-[4/4.7]">
                 <img src="/AGE-4.jpg" alt="Антон Гиззатов" className="h-full w-full object-cover object-[85%_center]" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/45 to-transparent p-5">
-                  <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">Project / Production / Operations</div>
+                  <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">Project / Producer / Operations</div>
                   <div className="mt-2 text-2xl font-semibold text-white">Антон Гиззатов</div>
                 </div>
               </div>
@@ -184,21 +197,19 @@ export default function Home() {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6">
-                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Позиционирование</div>
-                <div className="mt-3 text-2xl font-semibold leading-tight text-white">Не просто делаю контент.</div>
-                <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">
+                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Что важно понять обо мне</div>
+                <div className="mt-3 text-2xl font-semibold leading-tight text-white">Не просто двигаю задачи.</div>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">
                   Выстраиваю систему работы: люди, роли, процессы, контроль, качество, дедлайны, коммуникация и результат на выходе.
                 </p>
               </div>
 
               <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_16px_60px_rgba(0,0,0,0.38)] backdrop-blur sm:p-6">
-                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Какие роли рассматриваю</div>
+                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Что продаю</div>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {roles.map((item) => (
-                    <span key={item} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-200">
-                      {item}
-                    </span>
-                  ))}
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-200">Проджект</span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-200">Продюсер</span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-200">Системный координатор</span>
                 </div>
               </div>
             </div>
@@ -214,12 +225,12 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="mt-4 grid gap-4 lg:grid-cols-[0.78fr_1.22fr]">
+        <section id="value" className="mt-16 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
-            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контекст проектов</div>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Где мой опыт особенно силён</h2>
+            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Что я даю проекту</div>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Что получает команда / работодатель</h2>
             <div className="mt-5 grid gap-3">
-              {contexts.map((item) => (
+              {valueItems.map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-200">
                   {item}
                 </div>
@@ -228,20 +239,40 @@ export default function Home() {
           </div>
 
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
-            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Почему сайт должен работать на отклики</div>
-            <div className="mt-3 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-sm font-semibold text-white">Кто я</div>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">Проектный менеджер и продюсер с сильной операционной базой.</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-sm font-semibold text-white">Что я сделал</div>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">Команды, большие события, бюджеты, контент и процессы — всё с цифрами.</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-sm font-semibold text-white">Как я думаю</div>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">Через систему: PDCA, BPMN, контроль точек риска и управляемый результат.</p>
-              </div>
+            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Как я думаю</div>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Моё управленческое мышление</h2>
+            <div className="mt-5 grid gap-3">
+              {thinkingItems.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-4 grid gap-4 lg:grid-cols-[0.82fr_1.18fr]">
+          <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
+            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Подхожу вам, если…</div>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Когда моя роль особенно полезна</h2>
+            <div className="mt-5 grid gap-3">
+              {fitItems.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
+            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Артефакты управления</div>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Не только говорю про систему — работаю через неё</h2>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {artifacts.map((item) => (
+                <span key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-zinc-200">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </section>
@@ -249,7 +280,7 @@ export default function Home() {
         <section id="cases" className="mt-16 scroll-mt-28 sm:scroll-mt-32">
           <div className="mb-6">
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейсы</div>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Разные типы задач, которые я умею собирать в систему</h2>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Кейсы, в которых видно и креатив, и систему</h2>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -273,73 +304,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="glowbyte" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 01</div>
-              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">GlowByte — медиа-сопровождение корпоратива</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {["6 фотографов", "2 видеографа", "2 видео", "20 reels", "3000+ фото"].map((item) => (
-                <span key={item} className="rounded-full border border-orange-400/20 bg-orange-500/10 px-3 py-1 text-xs text-orange-200">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
-            Организовал фото- и видеапродакшн под корпоративное мероприятие с контентом для отчётности, внутренних коммуникаций и дальнейших публикаций.
-          </p>
-
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Техническое задание</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Работа велась по формализованному ТЗ: отчётный фильм 5–10 минут, ролики для соцсетей, охват ключевых моментов и фиксация выступлений и активностей.</p>
-            </div>
-            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Как выстроил процесс</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собрал команду, распределил зоны съёмки, зафиксировал требования к контенту, выстроил pipeline: съёмка → отбор → обработка → сдача.</p>
-            </div>
-            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">3000+ уникальных фотографий без дублей, 2 итоговых видео, около 20 reels, структурированная выдача материалов в срок.</p>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <img src="/cases/glowbyte/photo-1.jpg" alt="GlowByte 1" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-            <img src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-            <img src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-            <img src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
-          </div>
-
-          <div className="mt-4 grid gap-4 xl:grid-cols-3">
-            <img src="/cases/glowbyte/contract-1.png" alt="Фрагмент ТЗ GlowByte" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover bg-black/20" />
-            <div className="grid gap-4">
-              <img src="/cases/glowbyte/chat-1.png" alt="Управление командой GlowByte" className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover" />
-              <img src="/cases/glowbyte/chat-2.png" alt="Распределение зон GlowByte" className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover" />
-            </div>
-            <video
-              src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 bg-black object-cover"
-            />
-          </div>
-        </section>
-
         <section id="graduation" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Кейс 02</div>
-              <h3 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">Медиавыпускной — продюсирование мероприятия</h3>
+              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Флагманский кейс</div>
+              <h3 className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">Медиавыпускной — продюсирование события как цельной системы</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["сценарий", "тайминги", "дизайн", "моушен", "смета", "команда"].map((item) => (
+              {["сценарий", "тайминги", "дизайн", "motion", "смета", "координация"].map((item) => (
                 <span key={item} className="rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-xs text-violet-200">
                   {item}
                 </span>
@@ -347,22 +319,43 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
-            Организовал мероприятие с награждением, сценарием, таймингом, визуальной системой и несколькими направлениями работы, идущими параллельно.
+          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg">
+            Здесь видно меня именно как продюсера / проджекта: я собирал мероприятие не как набор задач, а как единую систему из сценария, тайминга, визуала, команды, сметы и контроля исполнения.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Что собирал</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Сценарий, логику блоков, взаимодействие направлений, тайминги, подготовку награждения и визуальные носители мероприятия.</p>
+              <div className="text-sm font-semibold text-white">Задача</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Организовать крупное мероприятие с награждением, сценарием, визуальной системой, motion, сметой, таймингом и несколькими параллельными направлениями работы.
+              </p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Визуальная система</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Команда под моим управлением делала дизайн и моушен для сцены, анонсов, носителей и digital-материалов, встроенных в общий сценарий события.</p>
+              <div className="text-sm font-semibold text-white">Сложность</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Риск рассинхрона между блоками, зависимость таймингов друг от друга, необходимость держать вместе контент, сцену, задачи, визуал и подготовку материалов.
+              </p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собранная и синхронизированная система подготовки: сценарий, задачи, тайминги, смета, визуал и команда, работающая в одном ритме.</p>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Вместо разрозненных направлений — синхронизированная система подготовки: сценарий, команда, визуал, тайминг, смета и контроль в одном ритме.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Было → стало</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Было: много направлений, визуальных носителей, отдельных задач и высокий риск хаоса. Стало: единая продюсерская логика, в которой сценарий, визуальная часть, тайминги, бюджет и команда работают как одна система.
+              </p>
+            </div>
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Что я собрал</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Сценарий, логику блоков, визуальную систему, motion, тайминги, смету, задачи и координацию между направлениями. Это и есть кейс о моей способности собирать сложный проект в управляемую структуру.
+              </p>
             </div>
           </div>
 
@@ -404,17 +397,82 @@ export default function Home() {
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <img src="/cases/graduation/script.png" alt="Сценарий" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/timings.png" alt="Тайминги" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/budget.png" alt="Смета" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/tasks.png" alt="Задачи" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/script.png" alt="Фрагмент сценария" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/timings.png" alt="Фрагмент таймингов" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/budget.png" alt="Фрагмент сметы" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/tasks.png" alt="Фрагмент задач" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <img src="/cases/graduation/chat-1.png" alt="Созвоны и блоки" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/chat-2.png" alt="Общая инфа" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/chat-3.png" alt="Изменения и дедлайны" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
-            <img src="/cases/graduation/chat-4.png" alt="Вопросы по квесту" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/chat-1.png" alt="Координация блока 1" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/chat-2.png" alt="Координация блока 2" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/chat-3.png" alt="Координация блока 3" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+            <img src="/cases/graduation/chat-4.png" alt="Координация блока 4" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover" />
+          </div>
+        </section>
+
+        <section id="glowbyte" className="mt-16 scroll-mt-28 rounded-[32px] border border-white/10 bg-zinc-950/85 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.38)] backdrop-blur sm:scroll-mt-32 sm:p-8">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Коммерческий proof-case</div>
+              <h3 className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">GlowByte — работа по ТЗ клиента и управление продакшеном</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {["GlowByte", "6 фотографов", "2 видеографа", "ТЗ", "3000+ фото"].map((item) => (
+                <span key={item} className="rounded-full border border-orange-400/20 bg-orange-500/10 px-3 py-1 text-xs text-orange-200">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg">
+            Этот кейс показывает, что я умею работать не только во внутренних системах, но и в коммерческом формате: есть бренд, есть внешнее ТЗ, есть продакшен-команда и есть результат, который нужно сдать управляемо и без хаоса.
+          </p>
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Задача</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Организовать фото- и видеапродакшн под корпоративное мероприятие с контентом для отчётности, внутренних коммуникаций и публикаций.
+              </p>
+            </div>
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Что собрал</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Команду, распределение зон, требования к контенту, pipeline съёмка → отбор → обработка → сдача, а также логику контроля качества и сроков.
+              </p>
+            </div>
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Было → стало</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Было: потенциальный хаос в распределении и выдаче. Стало: управляемая система съёмки и сдачи материалов с понятными правилами и контролем результата.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <img src="/cases/glowbyte/photo-1.jpg" alt="GlowByte 1" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+            <img src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+            <img src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+            <img src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[4/3] w-full rounded-[24px] object-cover" />
+          </div>
+
+          <div className="mt-4 grid gap-4 xl:grid-cols-3">
+            <img src="/cases/glowbyte/contract-1.png" alt="Фрагмент ТЗ GlowByte" className="aspect-[4/3] w-full rounded-[24px] border border-white/10 object-cover bg-black/20" />
+            <div className="grid gap-4">
+              <img src="/cases/glowbyte/chat-1.png" alt="Командная координация GlowByte" className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover" />
+              <img src="/cases/glowbyte/chat-2.png" alt="Распределение зон GlowByte" className="aspect-[16/10] w-full rounded-[24px] border border-white/10 object-cover" />
+            </div>
+            <video
+              src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="aspect-[4/3] w-full rounded-[24px] border border-white/10 bg-black object-cover"
+            />
           </div>
         </section>
 
@@ -433,22 +491,22 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-zinc-300 sm:max-w-3xl sm:text-base">
-            Систематизировал ежедневные показатели, сравнивал план и факт, отслеживал динамику по точкам и формировал гипотезы для улучшения операционной модели.
+          <p className="mt-5 max-w-3xl text-base leading-7 text-zinc-300">
+            Этот кейс показывает мою способность работать не только с креативом, но и с цифрами, логикой контроля и гипотезами для принятия решений.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Что делал</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Собирал и структурировал данные по выручке, визуализировал план / факт и отклонения, отслеживал динамику и выделял проблемные точки.</p>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">Собирал и структурировал данные по выручке, визуализировал план / факт и отклонения, отслеживал динамику и выделял проблемные точки.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <div className="text-sm font-semibold text-white">Как думал</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Не ограничивался цифрами: предлагал гипотезы по обучению, корпоративной культуре, сетям, адаптации новых сотрудников и упрощению регламентов.</p>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">Не ограничивался цифрами: предлагал гипотезы по обучению, корпоративной культуре, сетям, адаптации новых сотрудников и упрощению регламентов.</p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-              <div className="text-sm font-semibold text-white">Результат</div>
-              <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Появилась прозрачная система контроля, база для управленческих решений и более предметный разговор о росте, просадках и точках оптимизации.</p>
+              <div className="text-sm font-semibold text-white">Было → стало</div>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">Было: просто показатели и просадки. Стало: структура наблюдения и база для управленческих решений.</p>
             </div>
           </div>
 
@@ -473,16 +531,16 @@ export default function Home() {
                 ))}
               </div>
               <p className="mt-5 text-base leading-7 text-zinc-300">
-                Декомпозирую процессы, выделяю роли, точки решений, движение документов и контроль сроков, чтобы убрать хаос и повысить управляемость системы.
+                Этот кейс усиливает мой профиль как человека, который умеет не только вести проект, но и проектировать логику процессов, ролей, документов и точек контроля.
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
                   <div className="text-sm font-semibold text-white">Что сделал</div>
-                  <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль сроков и документов.</p>
+                  <p className="mt-3 text-sm leading-6 text-zinc-300">Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль сроков и документов.</p>
                 </div>
                 <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                  <div className="text-sm font-semibold text-white">Что это дало</div>
-                  <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">Прозрачный процесс, понятные зоны ответственности, снижение риска потерь задач и ускорение согласований.</p>
+                  <div className="text-sm font-semibold text-white">Было → стало</div>
+                  <p className="mt-3 text-sm leading-6 text-zinc-300">Было: размытый процесс и риск потерь. Стало: прозрачная схема ролей, документов, решений и сроков.</p>
                 </div>
               </div>
             </div>
@@ -494,10 +552,10 @@ export default function Home() {
 
         <section id="process" className="mt-16 scroll-mt-28 grid gap-4 sm:scroll-mt-32 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur sm:p-8">
-            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Подход</div>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">PDCA как рабочая логика, а не красивая аббревиатура</h2>
+            <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Как проходит работа со мной</div>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Понятный процесс вместо ручного хаоса</h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-zinc-300">
-              Мне важен не только факт выполнения задачи, а то, как система работает в целом: где сыпется, где перегружает команду, где даёт лишние итерации и как это перевести в следующую, более устойчивую версию.
+              Мне важно не просто двигать проект по задачам, а собирать систему, в которой понятно кто за что отвечает, как всё связано и где находится контроль.
             </p>
           </div>
 
@@ -506,7 +564,7 @@ export default function Home() {
               <div key={item.step} className="rounded-[30px] border border-white/10 bg-zinc-950/85 p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] backdrop-blur">
                 <div className="text-sm font-medium uppercase tracking-[0.22em] text-orange-300">{item.step}</div>
                 <div className="mt-3 text-xl font-semibold text-white">{item.title}</div>
-                <p className="mt-3 max-w-[42ch] text-[15px] leading-7 text-zinc-300 sm:max-w-none sm:text-sm sm:leading-6">{item.text}</p>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">{item.text}</p>
               </div>
             ))}
           </div>
@@ -517,7 +575,7 @@ export default function Home() {
             <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Инструменты</div>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">То, чем усиливаю управление и продакшн</h2>
             <p className="mt-4 text-base leading-7 text-zinc-300">
-              Я хорошо чувствую стык между контентом и операционкой: могу говорить и с креативной командой, и с теми, кому нужны порядок, сроки и прогнозируемый результат.
+              Хорошо чувствую стык между контентом и операционкой: могу говорить и с креативной командой, и с теми, кому нужны сроки, предсказуемость и прозрачный результат.
             </p>
           </div>
 
@@ -536,9 +594,9 @@ export default function Home() {
           <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-8 lg:p-10">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-zinc-500">Контакты</div>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Готов подключаться к проектам, где важны система, темп и результат</h2>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Если вам нужен проджект / продюсер, который собирает систему, а не просто двигает задачи</h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-700">
-                Интересны роли на стыке проектного управления, продакшна, операционки и развития процессов. Особенно там, где нужно не просто закрывать задачи, а собирать рабочую структуру из хаоса.
+                Я могу подключиться к роли, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Буду рад обсудить роль, формат работы и ожидания.
               </p>
             </div>
 
