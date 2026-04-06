@@ -312,24 +312,41 @@ export default function Home() {
         </header>
 
         <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] fade-up delay-1">
-          <div className="order-1 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/88 to-zinc-950/88 shadow-[0_20px_80px_rgba(0,0,0,0.44)] lg:order-2">
-            <div className="relative aspect-[4/4.7] sm:aspect-[4/4.05] lg:aspect-[4/4.7]">
-              <img
-                src="/AGE-4.jpg"
-                alt="Антон Гиззатов"
-                className="h-full w-full object-cover object-[58%_center] sm:object-[66%_center] lg:object-[78%_center]"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
-                <div className="rounded-[22px] border border-white/10 bg-black/28 p-3 backdrop-blur-md sm:p-4">
-                  <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">
-                    Project / Producer / Operations
+          <div className="order-1 grid gap-4 lg:order-2 lg:auto-rows-max">
+            <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/88 to-zinc-950/88 shadow-[0_20px_80px_rgba(0,0,0,0.44)]">
+              <div className="relative aspect-[4/4.7] sm:aspect-[4/4.05] lg:aspect-[4/3.55]">
+                <img
+                  src="/AGE-4.jpg"
+                  alt="Антон Гиззатов"
+                  className="h-full w-full object-cover object-[58%_center] sm:object-[66%_center] lg:object-[74%_28%]"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
+                  <div className="rounded-[22px] border border-white/10 bg-black/30 p-3 backdrop-blur-md sm:p-4">
+                    <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">
+                      Project / Producer / Operations
+                    </div>
+                    <div className="mt-2 text-lg font-semibold text-white sm:text-2xl">
+                      Антон Гиззатов
+                    </div>
+                    <div className="mt-2 text-sm leading-6 text-zinc-300 sm:max-w-[28rem]">
+                      Middle+ / senior-ready профиль для сложных, срочных и многоуровневых задач.
+                    </div>
                   </div>
-                  <div className="mt-2 text-lg font-semibold text-white sm:text-2xl">
-                    Антон Гиззатов
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-zinc-300 sm:max-w-[28rem]">
-                    Middle+ / senior-ready профиль для сложных, срочных и многоуровневых задач.
-                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">
+                  Hybrid / project format, быстрый вход в контекст и высокий темп исполнения.
+                </div>
+              </div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Сильнее всего считывается в</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-100">
+                  Media / event / content / operations ролях, где важны и визуал, и управленческий контур.
                 </div>
               </div>
             </div>
@@ -405,20 +422,32 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="value" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[0.98fr_1.02fr] sm:scroll-mt-32 fade-up delay-3">
-          <Surface className="p-6 sm:p-8">
-            <SectionEyebrow>Ценность</SectionEyebrow>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Что получает команда / работодатель
-            </h2>
-            <div className="mt-6 grid gap-3">
-              {strengths.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-zinc-200">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </Surface>
+        <section id="value" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[1fr_1fr] sm:scroll-mt-32 fade-up delay-3">
+          <div className="grid gap-4">
+            <Surface className="p-6 sm:p-8">
+              <SectionEyebrow>Ценность</SectionEyebrow>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Что получает команда / работодатель
+              </h2>
+              <div className="mt-6 grid gap-3">
+                {strengths.map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-zinc-200">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </Surface>
+
+            <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-6 sm:p-8">
+              <SectionEyebrow>Что это даёт бизнесу</SectionEyebrow>
+              <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                Не просто сильного исполнителя, а человека, который снижает хаос, удерживает темп и переводит проект в управляемый режим.
+              </div>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-200 sm:text-base">
+                За счёт этого профиль сильнее продаётся под вакансии, где нужен не отдельный креативный блок, а владелец операционной логики проекта.
+              </p>
+            </Surface>
+          </div>
 
           <div className="grid gap-4">
             <Surface className="p-6 sm:p-8">
@@ -435,12 +464,12 @@ export default function Home() {
               </div>
             </Surface>
 
-            <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-6 sm:p-8">
+            <Surface className="p-6 sm:p-8">
               <SectionEyebrow>Под офферы</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
                 Сайт позиционирует меня не как “человека из медиа”, а как управленца на стыке креатива, процессов, аналитики и результата.
               </div>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-200 sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">
                 Это усиливает отклик под вакансии project manager, продюсер, operations lead, coordinator lead, PM в media / event / content и гибридные роли с операционным контуром.
               </p>
             </Surface>
@@ -531,11 +560,11 @@ export default function Home() {
           gallery={
             <div className="grid gap-4 xl:grid-cols-12">
               <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="xl:col-span-4" />
+              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-4" />
               <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" title="Motion 02" className="xl:col-span-4" />
+              <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] xl:col-span-5" />
               <MediaImage src="/cases/graduation/photo-1.jpg" alt="Медиавыпускной 1" className="aspect-[16/10] xl:col-span-4" />
-              <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] xl:col-span-6" />
               <MediaImage src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[16/10] xl:col-span-3" />
-              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-3" />
             </div>
           }
           assets={
