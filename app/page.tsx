@@ -317,20 +317,20 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-x-0 top-0 z-40 h-28 bg-gradient-to-b from-[#050507] via-[#050507]/88 to-transparent sm:h-32" />
 
       <div className="mx-auto max-w-7xl px-4 pb-28 pt-24 sm:px-6 sm:pt-30 lg:px-8 lg:pb-8">
-        <header className="fade-up fixed left-4 right-4 top-3 z-50 rounded-[24px] border border-white/10 bg-zinc-950/78 px-4 py-3 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:left-6 sm:right-6 lg:left-8 lg:right-8">
+        <header className="fade-up fixed left-4 right-4 top-3 z-50 rounded-[22px] border border-white/10 bg-zinc-950/78 px-4 py-3 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:left-6 sm:right-6 sm:px-5 sm:py-3 lg:left-8 lg:right-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+              <div className="text-[10px] uppercase tracking-[0.24em] text-zinc-500 sm:text-[11px] sm:tracking-[0.28em]">
                 Portfolio / Project & Production
               </div>
-              <div className="mt-1 text-lg font-semibold text-white">Антон Гиззатов</div>
+              <div className="mt-1 text-base font-semibold text-white sm:text-lg">Антон Гиззатов</div>
             </div>
 
             <nav className="flex flex-wrap gap-2 text-sm text-zinc-300">
-              <a href="#cases" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">Кейсы</a>
-              <a href="#value" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">Ценность</a>
-              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">Как работаю</a>
-              <ContactButton label="Связаться" className="px-4 py-2 text-sm" />
+              <a href="#cases" className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-[15px] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08] sm:px-4 sm:py-2 sm:text-sm">Кейсы</a>
+              <a href="#value" className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-[15px] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08] sm:px-4 sm:py-2 sm:text-sm">Ценность</a>
+              <a href="#process" className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-[15px] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08] sm:px-4 sm:py-2 sm:text-sm">Как работаю</a>
+              <ContactButton label="Связаться" className="hidden sm:inline-flex px-4 py-2 text-sm" />
             </nav>
           </div>
         </header>
@@ -345,15 +345,15 @@ export default function Home() {
                   className="h-full w-full object-cover object-[58%_center] sm:object-[66%_center] lg:object-[74%_28%]"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
-                  <div className="rounded-[22px] border border-white/10 bg-black/30 p-3 backdrop-blur-md sm:p-4">
-                    <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">
+                  <div className="rounded-[20px] border border-white/10 bg-black/30 p-3 backdrop-blur-md sm:p-4">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 sm:text-[11px] sm:tracking-[0.24em]">
                       Project / Producer / Operations
                     </div>
                     <div className="mt-2 text-lg font-semibold text-white sm:text-2xl">
                       Антон Гиззатов
                     </div>
-                    <div className="mt-2 text-sm leading-6 text-zinc-300 sm:max-w-[28rem]">
-                      Профиль уровня middle+ для сложных, срочных и многоуровневых задач.
+                    <div className="mt-2 text-sm leading-5 text-zinc-300 sm:max-w-[28rem] sm:leading-6">
+                      Профиль уровня middle+ для сложных и многоуровневых задач.
                     </div>
                   </div>
                 </div>
