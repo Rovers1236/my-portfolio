@@ -329,7 +329,7 @@ export default function Home() {
                       Антон Гиззатов
                     </div>
                     <div className="mt-2 text-sm leading-6 text-zinc-300 sm:max-w-[28rem]">
-                      Middle+ / senior-ready профиль для сложных, срочных и многоуровневых задач.
+                      Профиль уровня middle+ для сложных, срочных и многоуровневых задач.
                     </div>
                   </div>
                 </div>
@@ -340,13 +340,13 @@ export default function Home() {
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Hybrid / project format, быстрый вход в контекст и высокий темп исполнения.
+                  Гибкий формат работы, быстрый вход в контекст и высокий темп исполнения.
                 </div>
               </div>
               <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Сильнее всего считывается в</div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роли, под которые профиль подходит лучше всего</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Media / event / content / operations ролях, где важны и визуал, и управленческий контур.
+                  Project manager / producer / operations роли на стыке media, event, content и управленческого контура.
                 </div>
               </div>
             </div>
@@ -386,7 +386,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-8 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
+            <div className="mt-8 grid gap-3 md:grid-cols-3">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почему это работает</div>
                 <div className="mt-3 grid gap-2.5">
@@ -396,20 +396,22 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                <div className="mt-4 text-sm leading-6 text-zinc-400">
+                  Снимаю перегруз с команды и делаю проект управляемым.
+                </div>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
-                <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
-                  <div className="mt-2 text-sm leading-6 text-zinc-100">
-                    Руководитель проектов / продюсер / operations lead для media, event и контентных задач.
-                  </div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-100">
+                  Руководитель проектов / продюсер / operations lead для media, event и контентных задач.
                 </div>
-                <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что считывает рекрутер</div>
-                  <div className="mt-2 text-sm leading-6 text-zinc-200">
-                    Не исполнитель отдельного блока, а человек, который собирает и удерживает всю систему проекта.
-                  </div>
+              </div>
+
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что считывает рекрутер</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">
+                  Не исполнитель отдельного блока, а человек, который собирает и удерживает всю систему проекта.
                 </div>
               </div>
             </div>
@@ -435,6 +437,9 @@ export default function Home() {
                     {item}
                   </div>
                 ))}
+              </div>
+              <div className="mt-5 rounded-2xl border border-white/10 bg-gradient-to-r from-white/[0.04] to-white/[0.02] px-4 py-3 text-sm leading-6 text-zinc-300">
+                Итог для команды: меньше хаоса, меньше ручного героизма и больше предсказуемости по срокам, качеству и коммуникации.
               </div>
             </Surface>
 
@@ -559,11 +564,11 @@ export default function Home() {
           ]}
           gallery={
             <div className="grid gap-4 xl:grid-cols-12">
-              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="xl:col-span-4" />
-              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-4" />
+              <MediaImage src="/cases/graduation/design-poster.jpg" alt="Постер Медиавыпускного" className="aspect-[4/5] xl:col-span-3 xl:row-span-2" />
+              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="xl:col-span-5" />
               <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" title="Motion 02" className="xl:col-span-4" />
               <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] xl:col-span-5" />
-              <MediaImage src="/cases/graduation/photo-1.jpg" alt="Медиавыпускной 1" className="aspect-[16/10] xl:col-span-4" />
+              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-4" />
               <MediaImage src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[16/10] xl:col-span-3" />
             </div>
           }
@@ -733,28 +738,31 @@ export default function Home() {
 
         <section id="contacts" className="mt-16 mb-8 scroll-mt-28 sm:scroll-mt-32">
           <Surface className="overflow-hidden bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(10,10,12,0.98))]">
-            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
+            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:p-10">
               <div>
                 <SectionEyebrow>Контакты</SectionEyebrow>
-                <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Если вам нужен руководитель проектов / продюсер, который собирает систему, а не просто двигает задачи
+                <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Открыт к ролям, где нужен человек, который собирает проект в систему
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300">
-                  Открыт к ролям, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Особенно интересны project / producer / operations роли на стыке media, event и content.
+                  Интересны project / producer / operations роли, где важно связать людей, процессы, сроки и результат в одну рабочую логику.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <ContactButton label="Написать в Telegram" href="https://t.me/Rovers1236" />
-                  <ContactButton label="Отправить письмо" href="mailto:anton6370@gmail.com" secondary />
+                </div>
+                <div className="mt-4 text-sm leading-6 text-zinc-500">
+                  Почта — для вакансий, резюме и рабочих деталей.
                 </div>
               </div>
 
               <div className="grid gap-4 content-start">
-                <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
-                  <a href="https://t.me/Rovers1236" className="mt-3 block text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-violet-500/10 via-fuchsia-500/5 to-orange-500/8 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Основной канал</div>
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
+                  <a href="https://t.me/Rovers1236" className="mt-2 block text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                     @Rovers1236
                   </a>
-                  <div className="mt-2 text-sm text-zinc-400">Быстрый способ связаться и обсудить следующий шаг</div>
+                  <div className="mt-2 text-sm text-zinc-300">Быстрее всего отвечаю здесь — удобно обсудить роль и следующий шаг.</div>
                 </div>
 
                 <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
@@ -762,7 +770,7 @@ export default function Home() {
                   <a href="mailto:anton6370@gmail.com" className="mt-3 block text-xl font-semibold tracking-tight text-white break-all sm:text-2xl">
                     anton6370@gmail.com
                   </a>
-                  <div className="mt-2 text-sm text-zinc-400">Для вакансий, обсуждения роли и рабочих деталей</div>
+                  <div className="mt-2 text-sm text-zinc-400">Подходит для вакансий, резюме и рабочих деталей.</div>
                 </div>
               </div>
             </div>
