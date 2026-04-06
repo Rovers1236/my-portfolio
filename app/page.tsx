@@ -1,9 +1,10 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Антон Гиззатов — Project Manager / Producer",
   description:
-    "Портфолио Антона Гиззатова: project management, production, operations, BPMN, аналитика и кейсы на стыке медиа, event и процессов.",
+    "Портфолио Антона Гиззатова: project management, продюсирование, операционка, кейсы по event, media, аналитике и BPMN.",
 };
 
 type CaseCard = { title: string; text: string };
@@ -88,27 +89,6 @@ function InfoCard({ title, text }: { title: string; text: string }) {
   );
 }
 
-function ProofStrip({
-  items,
-  className = "",
-}: {
-  items: { value: string; label: string }[];
-  className?: string;
-}) {
-  return (
-    <div
-      className={`grid gap-3 rounded-[26px] border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2 xl:grid-cols-4 ${className}`}
-    >
-      {items.map((item) => (
-        <div key={item.label} className="rounded-[20px] border border-white/10 bg-black/20 px-4 py-4">
-          <div className="text-2xl font-semibold tracking-tight text-white">{item.value}</div>
-          <div className="mt-1 text-sm leading-6 text-zinc-400">{item.label}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function MediaImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.34)] ${className}`}>
@@ -150,6 +130,15 @@ function AssetTile({ src, alt, title }: { src: string; alt: string; title: strin
   );
 }
 
+function ProofItem({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-[22px] border border-white/10 bg-white/[0.03] px-4 py-4">
+      <div className="text-lg font-semibold tracking-tight text-white">{value}</div>
+      <div className="mt-1 text-sm leading-6 text-zinc-400">{label}</div>
+    </div>
+  );
+}
+
 function CaseSection({
   id,
   eyebrow,
@@ -177,8 +166,8 @@ function CaseSection({
       className="group relative mt-16 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.88),rgba(10,10,12,0.95))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42)] transition duration-300 hover:border-white/15 hover:shadow-[0_30px_110px_rgba(0,0,0,0.48)] sm:scroll-mt-32 sm:p-8"
     >
       <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-violet-200/35" />
-      <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/12 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/8 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-36 w-36 rounded-full bg-orange-500/7 blur-3xl" />
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div>
@@ -236,13 +225,6 @@ export default function Home() {
     { value: "3000+", label: "единиц контента в коммерческих кейсах" },
   ];
 
-  const proofItems = [
-    { value: "12 000+", label: "участников" },
-    { value: "2M ₽", label: "закупки и оргбюджеты" },
-    { value: "8 / 6", label: "процессов описано / оптимизировано" },
-    { value: "AS IS → TO BE", label: "процессная логика" },
-  ];
-
   const highlights = [
     "Project management",
     "Продюсирование",
@@ -263,14 +245,14 @@ export default function Home() {
     "руководитель проектов / project manager",
     "продюсер / production manager",
     "operations / coordination lead",
-    "роли на стыке media, event, content и процессов",
+    "гибридные роли на стыке media, event, content и процессов",
   ];
 
   const process = [
     {
       step: "01",
       title: "Быстро захожу в контекст",
-      text: "Собираю вводные, ограничения и реальные точки риска без длинной раскачки.",
+      text: "Собираю вводные, ограничения и реальные точки риска без долгой раскачки.",
     },
     {
       step: "02",
@@ -302,41 +284,6 @@ export default function Home() {
     "Фото / видео продакшн",
   ];
 
-  const casePreviews = [
-    {
-      id: "graduation",
-      title: "Медиавыпускной",
-      desc: "Флагманский кейс: продюсирование, визуальная система, сценарий, тайминг и координация.",
-      tags: ["флагман", "сценарий", "дизайн", "координация"],
-      image: "/cases/graduation-cover.jpg",
-      featured: true,
-    },
-    {
-      id: "glowbyte",
-      title: "GlowByte",
-      desc: "Коммерческий продакшн по ТЗ клиента и управление командой под результат.",
-      tags: ["бренд", "ТЗ", "команда", "контент"],
-      image: "/cases/glowbyte-cover.jpg",
-      featured: false,
-    },
-    {
-      id: "gf",
-      title: "GF / показатели",
-      desc: "План / факт, аналитика и управленческие гипотезы как инструмент решений.",
-      tags: ["аналитика", "план / факт", "гипотезы"],
-      image: "/cases/gf-cover.png",
-      featured: false,
-    },
-    {
-      id: "bpmn",
-      title: "BPMN",
-      desc: "Проектирование процессов, ролей, согласований и логики контроля.",
-      tags: ["процессы", "роли", "контроль"],
-      image: "/cases/bpmn-cover.png",
-      featured: false,
-    },
-  ];
-
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#050507] text-zinc-100 selection:bg-violet-500/30 [scrollbar-color:#27272a_#09090b]">
       <style>{`
@@ -347,8 +294,8 @@ export default function Home() {
             to { opacity: 1; transform: translateY(0); }
           }
           @keyframes softPulse {
-            0%, 100% { transform: scale(1); opacity: .55; }
-            50% { transform: scale(1.04); opacity: .82; }
+            0%, 100% { transform: scale(1); opacity: .64; }
+            50% { transform: scale(1.04); opacity: .9; }
           }
           @keyframes reveal {
             from { opacity: 0; transform: translateY(14px); }
@@ -364,12 +311,12 @@ export default function Home() {
         summary::-webkit-details-marker { display: none; }
       `}</style>
 
-      <div className="fixed inset-0 -z-30 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.14),transparent_32%),linear-gradient(to_bottom,#040405,#09090c_42%,#050507)]" />
-      <div className="fixed inset-0 -z-30 opacity-[0.035] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:42px_42px]" />
-      <div className="pointer-events-none fixed left-[10%] top-24 -z-20 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl pulse-soft" />
+      <div className="fixed inset-0 -z-30 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.12),transparent_28%),linear-gradient(to_bottom,#040405,#09090c_42%,#050507)]" />
+      <div className="fixed inset-0 -z-30 opacity-[0.04] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:42px_42px]" />
+      <div className="pointer-events-none fixed left-[10%] top-24 -z-20 hidden h-44 w-44 rounded-full bg-violet-500/8 blur-3xl pulse-soft lg:block" />
       <div className="pointer-events-none fixed inset-x-0 top-0 z-40 h-28 bg-gradient-to-b from-[#050507] via-[#050507]/88 to-transparent sm:h-32" />
 
-      <div className="mx-auto max-w-7xl px-4 pb-28 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pb-8">
+      <div className="mx-auto max-w-7xl px-4 pb-28 pt-24 sm:px-6 sm:pt-30 lg:px-8 lg:pb-8">
         <header className="fade-up fixed left-4 right-4 top-3 z-50 rounded-[24px] border border-white/10 bg-zinc-950/78 px-4 py-3 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:left-6 sm:right-6 lg:left-8 lg:right-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
@@ -388,7 +335,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.02fr)_minmax(320px,0.98fr)] fade-up delay-1">
+        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] fade-up delay-1">
           <div className="order-1 grid gap-4 lg:order-2 lg:auto-rows-max">
             <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/88 to-zinc-950/88 shadow-[0_20px_80px_rgba(0,0,0,0.44)]">
               <div className="relative aspect-[4/4.7] sm:aspect-[4/4.05] lg:aspect-[4/3.55]">
@@ -413,17 +360,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 lg:col-span-1">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат работы</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-200">
                   Hybrid / project format, быстрый вход в контекст, спокойная коммуникация и высокий темп исполнения.
                 </div>
               </div>
-              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Где особенно полезен</div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/10 via-fuchsia-500/4 to-transparent p-4 lg:col-span-1">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роли</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Сложные проекты с несколькими зависимыми блоками, сжатыми сроками и большим объёмом координации.
+                  Project manager / producer / operations lead для media, event, content и гибридных команд.
+                </div>
+              </div>
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 sm:col-span-2 lg:col-span-1">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Тип задач</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">
+                  Особенно полезен там, где много хаоса, зависимых блоков, сжатые сроки и нужен управляемый результат.
                 </div>
               </div>
             </div>
@@ -432,14 +385,14 @@ export default function Home() {
           <Surface className="order-2 p-5 backdrop-blur sm:p-7 lg:order-1 lg:p-8 xl:p-10">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-violet-200">
-                middle+ / future senior
+                middle / middle+
               </div>
               <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
                 Москва · hybrid / project format
               </div>
             </div>
 
-            <div className="pointer-events-none absolute left-12 top-20 hidden h-44 w-44 rounded-full bg-violet-500/10 blur-3xl lg:block" />
+            <div className="pointer-events-none absolute left-12 top-20 hidden h-44 w-44 rounded-full bg-violet-500/8 blur-3xl lg:block" />
 
             <h1 className="relative mt-6 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px]">
               Собираю хаос
@@ -465,9 +418,7 @@ export default function Home() {
               </a>
             </div>
 
-            <ProofStrip items={proofItems} className="mt-8" />
-
-            <div className="mt-8 grid gap-3 md:grid-cols-[1.15fr_0.85fr]">
+            <div className="mt-8 grid gap-3 md:grid-cols-3">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что даю проекту</div>
                 <div className="mt-3 grid gap-2.5">
@@ -477,10 +428,17 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и позиционирование</div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/10 via-fuchsia-500/4 to-transparent p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Не исполнитель отдельного блока, а управленец на стыке production, operations и проектной логики.
+                  Руководитель проектов / продюсер / operations lead для задач, где важно не просто исполнение, а управляемый результат.
+                </div>
+              </div>
+
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Подход</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">
+                  Работаю через структуру, контрольные точки, понятные роли и спокойную координацию даже в сложных и срочных проектах.
                 </div>
               </div>
             </div>
@@ -491,6 +449,13 @@ export default function Home() {
           {metrics.map((item) => (
             <MetricCard key={item.label} value={item.value} label={item.label} />
           ))}
+        </section>
+
+        <section className="mt-4 grid gap-3 lg:grid-cols-4 fade-up delay-2">
+          <ProofItem value="8 процессов" label="описал и собрал в понятную логику" />
+          <ProofItem value="6 процессов" label="оптимизировал через AS IS / TO BE" />
+          <ProofItem value="BPMN / PDCA" label="использую как рабочий инструмент управления" />
+          <ProofItem value="Media + ops" label="соединяю продакшн, аналитику и операционку" />
         </section>
 
         <section id="value" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[1fr_1fr] sm:scroll-mt-32 fade-up delay-3">
@@ -512,22 +477,22 @@ export default function Home() {
               </div>
             </Surface>
 
-            <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-6 sm:p-8">
+            <Surface className="bg-gradient-to-b from-violet-500/10 via-fuchsia-500/4 to-transparent p-6 sm:p-8">
               <SectionEyebrow>Что это даёт бизнесу</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
                 Не просто сильного исполнителя, а человека, который снижает хаос, удерживает темп и переводит проект в управляемый режим.
               </div>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-200 sm:text-base">
-                Сильнее всего это считывается в ролях, где нужен владелец операционной логики, а не отдельный креативный блок.
+                Полезен там, где нужно быстро собрать людей, процессы, сроки и результат в одну рабочую систему — без потери качества и контроля.
               </p>
             </Surface>
           </div>
 
           <div className="grid gap-4">
             <Surface className="p-6 sm:p-8">
-              <SectionEyebrow>Роли, под которые профиль считывается сильнее всего</SectionEyebrow>
+              <SectionEyebrow>Где я особенно полезен</SectionEyebrow>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Где этот профиль выглядит наиболее дорогим
+                Роли и контекст, где профиль считывается сильнее всего
               </h2>
               <div className="mt-6 grid gap-3">
                 {roleFit.map((item) => (
@@ -539,18 +504,18 @@ export default function Home() {
             </Surface>
 
             <Surface className="p-6 sm:p-8">
-              <SectionEyebrow>Процессы и логика</SectionEyebrow>
+              <SectionEyebrow>Процессная экспертиза</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
-                Есть опыт не только в координации, но и в сборке самой системы: роли, переходы, контрольные точки и контур управления.
+                Умею не только координировать текущую работу, но и собирать саму логику процесса: роли, переходы, согласования и точки контроля.
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                  <div className="text-2xl font-semibold tracking-tight text-white">8</div>
-                  <div className="mt-1 text-sm leading-6 text-zinc-400">процессов описано</div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm leading-6 text-zinc-200">
+                  <div className="text-lg font-semibold text-white">8 процессов / 6 оптимизировано</div>
+                  <div className="mt-1 text-zinc-400">Есть практика описания и улучшения процессов через AS IS / TO BE.</div>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                  <div className="text-2xl font-semibold tracking-tight text-white">6</div>
-                  <div className="mt-1 text-sm leading-6 text-zinc-400">процессов оптимизировано</div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm leading-6 text-zinc-200">
+                  <div className="text-lg font-semibold text-white">BPMN как инструмент</div>
+                  <div className="mt-1 text-zinc-400">Использую схемы не как формальность, а как способ убрать потери и сделать систему прозрачнее.</div>
                 </div>
               </div>
             </Surface>
@@ -563,30 +528,50 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Кейсы, где видно не только визуал, но и управленческий контур
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300">
-              Один флагманский кейс, коммерческий продакшн, аналитика и процессная логика — всё, что показывает меня не только как человека из медиа, но и как управленца.
-            </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {casePreviews.map((item) => (
+            {[
+              {
+                id: "graduation",
+                title: "Медиавыпускной",
+                desc: "Флагманский кейс: продюсирование, визуальная система, сценарий, тайминг и координация.",
+                tags: ["флагман", "сценарий", "дизайн", "координация"],
+                image: "/cases/graduation-cover.jpg",
+                featured: true,
+              },
+              {
+                id: "glowbyte",
+                title: "GlowByte",
+                desc: "Коммерческий продакшн по ТЗ клиента и управление командой под результат.",
+                tags: ["бренд", "ТЗ", "команда", "контент"],
+                image: "/cases/glowbyte-cover.jpg",
+              },
+              {
+                id: "gf",
+                title: "GF / показатели",
+                desc: "План / факт, аналитика и управленческие гипотезы как инструмент решений.",
+                tags: ["аналитика", "план / факт", "гипотезы"],
+                image: "/cases/gf-cover.png",
+              },
+              {
+                id: "bpmn",
+                title: "BPMN",
+                desc: "Проектирование процессов, ролей, согласований и логики контроля.",
+                tags: ["процессы", "роли", "контроль"],
+                image: "/cases/bpmn-cover.png",
+              },
+            ].map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/82 shadow-[0_16px_60px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-white/15 ${
-                  item.featured ? "md:col-span-2 xl:col-span-2" : ""
-                }`}
+                className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/82 shadow-[0_16px_60px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-white/15 ${item.featured ? "md:col-span-2 xl:col-span-2" : ""}`}
               >
                 <img src={item.image} alt={item.title} className="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-700 group-hover:scale-105 group-hover:opacity-45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/15" />
-                <div className={`relative flex flex-col justify-end p-6 ${item.featured ? "h-[330px]" : "h-[290px]"}`}>
-                  {item.featured ? (
-                    <div className="mb-4 inline-flex w-max rounded-full border border-violet-300/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-violet-200">
-                      Флагманский кейс
-                    </div>
-                  ) : null}
-                  <div className="text-xl font-semibold text-white sm:text-2xl">{item.title}</div>
-                  <p className="mt-2 max-w-[34rem] text-sm leading-6 text-zinc-300">{item.desc}</p>
+                <div className={`relative flex flex-col justify-end p-6 ${item.featured ? "h-[320px] sm:h-[360px]" : "h-[290px]"}`}>
+                  <div className="text-xl font-semibold text-white">{item.title}</div>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-300">{item.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <Chip key={tag}>{tag}</Chip>
@@ -726,7 +711,7 @@ export default function Home() {
           eyebrow="Процессный кейс"
           title="BPMN — проектирование процессов, ролей и точек контроля"
           summary="Кейс не про дублирование описаний, а про конкретный навык: превращать разрозненный процесс в понятную логику со стадиями, ролями, согласованиями и прозрачным контуром управления."
-          chips={["BPMN", "роли", "согласования", "контроль", "SLA"]}
+          chips={["BPMN", "роли", "согласования", "контроль", "AS IS / TO BE"]}
           intro="Что спроектировал, что изменилось и почему это усиливает мой профиль под управленческие роли."
           cards={[
             {
@@ -746,8 +731,8 @@ export default function Home() {
             <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
               <MediaImage src="/cases/bpmn/bpmn-1.png" alt="BPMN схема" className="aspect-[16/10]" />
               <div className="grid gap-4 sm:grid-cols-2">
-                <InfoCard title="8 процессов описано" text="Есть практика формализации процессов через AS IS / TO BE, выделения ролей, точек контроля и зон потерь." />
-                <InfoCard title="6 процессов оптимизировано" text="Навык не только в визуализации схем, но и в реальной переработке логики переходов, ответственности и согласований." />
+                <InfoCard title="8 процессов / 6 оптимизировано" text="Есть практика описания процессов и последующей оптимизации через AS IS / TO BE: где процесс теряет скорость, где ломается согласование и где нужен контроль." />
+                <InfoCard title="Что даёт системе" text="Процесс становится прозрачнее: понятны роли, точки передачи, логика согласования и места, где раньше возникал хаос или ручной героизм." />
               </div>
             </div>
           }
@@ -817,7 +802,7 @@ export default function Home() {
               </div>
 
               <div className="grid gap-4 content-start">
-                <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-violet-500/10 via-fuchsia-500/5 to-orange-500/8 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
+                <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-violet-500/10 via-fuchsia-500/4 to-transparent p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
                   <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Основной канал</div>
                   <div className="mt-3 text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
                   <a href="https://t.me/Rovers1236" className="mt-2 block text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -828,7 +813,7 @@ export default function Home() {
 
                 <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
                   <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
-                  <a href="mailto:anton6370@gmail.com" className="mt-3 block text-xl font-semibold tracking-tight break-all text-white sm:text-2xl">
+                  <a href="mailto:anton6370@gmail.com" className="mt-3 block break-all text-xl font-semibold tracking-tight text-white sm:text-2xl">
                     anton6370@gmail.com
                   </a>
                   <div className="mt-2 text-sm text-zinc-400">Подходит для вакансий, резюме и рабочих деталей.</div>
@@ -840,7 +825,7 @@ export default function Home() {
       </div>
 
       <div className="fixed inset-x-4 bottom-4 z-50 sm:hidden">
-        <ContactButton label="Связаться" className="w-full shadow-[0_16px_40px_rgba(168,85,247,0.22)]" />
+        <ContactButton label="Связаться" className="w-full" />
       </div>
     </main>
   );
