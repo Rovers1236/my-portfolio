@@ -1,5 +1,197 @@
 import type { ReactNode } from "react";
 
+type CaseCard = { title: string; text: string };
+
+function SectionEyebrow({ children }: { children: ReactNode }) {
+  return (
+    <div className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+      {children}
+    </div>
+  );
+}
+
+function ContactButton({
+  label = "Связаться",
+  secondary = false,
+  className = "",
+  href = "#contacts",
+}: {
+  label?: string;
+  secondary?: boolean;
+  className?: string;
+  href?: string;
+}) {
+  return (
+    <a
+      href={href}
+      className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 ${
+        secondary
+          ? "border border-white/12 bg-white/[0.03] text-white hover:bg-white/[0.08]"
+          : "bg-gradient-to-r from-violet-500 via-fuchsia-500 to-orange-400 text-white shadow-[0_14px_40px_rgba(168,85,247,0.28)] hover:shadow-[0_18px_50px_rgba(249,115,22,0.24)]"
+      } ${className}`}
+    >
+      {label}
+    </a>
+  );
+}
+
+function Chip({ children, subtle = false }: { children: ReactNode; subtle?: boolean }) {
+  return (
+    <span
+      className={`rounded-full px-3 py-1.5 text-xs ${
+        subtle
+          ? "border border-white/10 bg-white/[0.03] text-zinc-300"
+          : "border border-white/10 bg-white/[0.05] text-zinc-200"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
+
+function Surface({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={`rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/84 to-zinc-950/88 shadow-[0_18px_70px_rgba(0,0,0,0.34)] ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function MetricCard({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_14px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
+      <div className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{value}</div>
+      <div className="mt-2 text-sm leading-6 text-zinc-400">{label}</div>
+    </div>
+  );
+}
+
+function InfoCard({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
+      <div className="text-sm font-semibold text-white">{title}</div>
+      <p className="mt-3 text-sm leading-6 text-zinc-300">{text}</p>
+    </div>
+  );
+}
+
+function MediaImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+  return (
+    <div className={`group overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] ${className}`}>
+      <img src={src} alt={alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+    </div>
+  );
+}
+
+function MediaVideo({ src, title, className = "" }: { src: string; title: string; className?: string }) {
+  return (
+    <div className={`group overflow-hidden rounded-[24px] border border-white/10 bg-black/30 ${className}`}>
+      <video
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls
+        className="h-full w-full object-cover"
+      />
+      <div className="border-t border-white/10 px-4 py-3 text-xs uppercase tracking-[0.18em] text-zinc-400">
+        {title}
+      </div>
+    </div>
+  );
+}
+
+function AssetTile({ src, alt, title }: { src: string; alt: string; title: string }) {
+  return (
+    <div className="group overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.03] p-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
+      <img src={src} alt={alt} className="aspect-[16/10] w-full rounded-[16px] object-cover transition duration-500 group-hover:scale-[1.02]" />
+      <div className="px-2 pb-1 pt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 transition duration-300 group-hover:text-zinc-300">
+        {title}
+      </div>
+    </div>
+  );
+}
+
+function CaseSection({
+  id,
+  eyebrow,
+  title,
+  summary,
+  chips,
+  intro,
+  cards,
+  gallery,
+  assets,
+}: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  summary: string;
+  chips: string[];
+  intro: string;
+  cards: CaseCard[];
+  gallery: ReactNode;
+  assets?: ReactNode;
+}) {
+  return (
+    <section
+      id={id}
+      className="relative mt-16 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.88),rgba(10,10,12,0.95))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42)] sm:scroll-mt-32 sm:p-8"
+    >
+      <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/12 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
+
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div>
+          <SectionEyebrow>{eyebrow}</SectionEyebrow>
+          <h3 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            {title}
+          </h3>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
+            {summary}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 lg:justify-end">
+          {chips.map((chip) => (
+            <Chip key={chip}>{chip}</Chip>
+          ))}
+        </div>
+      </div>
+
+      <details className="group mt-6 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] transition duration-300 open:bg-white/[0.04]">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:p-6">
+          <div>
+            <div className="text-sm font-semibold text-white">Открыть кейс</div>
+            <div className="mt-1 text-sm text-zinc-400">{intro}</div>
+          </div>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-zinc-300 transition duration-300 group-open:rotate-45 group-open:text-white">
+            +
+          </div>
+        </summary>
+
+        <div className="grid max-h-0 grid-rows-[0fr] overflow-hidden transition-all duration-500 ease-out group-open:max-h-[7000px] group-open:grid-rows-[1fr]">
+          <div className="min-h-0">
+            <div className="animate-reveal border-t border-white/10 p-5 pt-6 sm:p-6 sm:pt-6">
+              <div className="grid gap-4 lg:grid-cols-3">
+                {cards.map((card) => (
+                  <InfoCard key={card.title} title={card.title} text={card.text} />
+                ))}
+              </div>
+
+              <div className="mt-5">{gallery}</div>
+              {assets ? <div className="mt-5">{assets}</div> : null}
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+  );
+}
+
 export default function Home() {
   const metrics = [
     { value: "12 000+", label: "участников в масштабных проектах" },
@@ -18,39 +210,39 @@ export default function Home() {
   ];
 
   const strengths = [
-    "быстро собираю хаотичный проект в понятную структуру",
-    "держу темп, коммуникации, качество и дедлайны одновременно",
-    "соединяю креативную часть с управленческой логикой",
-    "работаю через роли, артефакты, контрольные точки и прозрачный процесс",
+    "собираю хаос в рабочую систему",
+    "держу сроки, качество и коммуникации одновременно",
+    "соединяю креатив с управленческой логикой",
+    "работаю через структуру, артефакты и контрольные точки",
   ];
 
   const roleFit = [
-    "срочные проекты, где нельзя долго раскачиваться",
-    "сложные среды с несколькими потоками задач и исполнителей",
-    "media / event / content-задачи на стыке креатива и операционки",
-    "проекты, где нужен не просто менеджер, а человек, который собирает систему",
+    "руководитель проектов / project manager",
+    "продюсер / production manager",
+    "operations / coordination lead",
+    "роли на стыке media, event, content и процессов",
   ];
 
   const process = [
     {
       step: "01",
-      title: "Быстро вхожу в контекст",
-      text: "Собираю вводные, ограничения, роли и реальные точки риска — без лишнего времени на раскачку.",
+      title: "Быстро захожу в контекст",
+      text: "Собираю вводные, ограничения и реальные точки риска без длинной раскачки.",
     },
     {
       step: "02",
-      title: "Собираю рабочую систему",
-      text: "Фиксирую этапы, ответственных, артефакты, дедлайны и логику взаимодействия между людьми и блоками.",
+      title: "Собираю систему",
+      text: "Фиксирую этапы, ответственных, документы, дедлайны и правила взаимодействия.",
     },
     {
       step: "03",
-      title: "Удерживаю проект в темпе",
-      text: "Синхронизирую команду, снимаю рассинхрон, контролирую качество и довожу проект до управляемого результата.",
+      title: "Держу темп",
+      text: "Синхронизирую команду, снимаю рассинхрон и удерживаю проект в рабочем ритме.",
     },
     {
       step: "04",
       title: "Усиливаю следующую итерацию",
-      text: "Смотрю, где процесс проседает, и превращаю выводы в более сильную следующую версию системы.",
+      text: "Перевожу выводы из проекта в более сильную следующую версию процесса.",
     },
   ];
 
@@ -67,175 +259,6 @@ export default function Home() {
     "Фото / видео продакшн",
   ];
 
-  function SectionEyebrow({ children }: { children: ReactNode }) {
-    return (
-      <div className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
-        {children}
-      </div>
-    );
-  }
-
-  function ContactButton({
-    label = "Связаться",
-    secondary = false,
-    className = "",
-    href = "#contacts",
-  }: {
-    label?: string;
-    secondary?: boolean;
-    className?: string;
-    href?: string;
-  }) {
-    return (
-      <a
-        href={href}
-        className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 ${
-          secondary
-            ? "border border-white/12 bg-white/[0.03] text-white hover:bg-white/[0.08]"
-            : "bg-gradient-to-r from-violet-500 via-fuchsia-500 to-orange-400 text-white shadow-[0_14px_40px_rgba(168,85,247,0.28)] hover:shadow-[0_18px_50px_rgba(249,115,22,0.26)]"
-        } ${className}`}
-      >
-        {label}
-      </a>
-    );
-  }
-
-  function Chip({ children, subtle = false }: { children: ReactNode; subtle?: boolean }) {
-    return (
-      <span
-        className={`rounded-full px-3 py-1.5 text-xs ${
-          subtle
-            ? "border border-white/10 bg-white/[0.03] text-zinc-300"
-            : "border border-white/10 bg-white/[0.05] text-zinc-200"
-        }`}
-      >
-        {children}
-      </span>
-    );
-  }
-
-  function Surface({ children, className = "" }: { children: ReactNode; className?: string }) {
-    return (
-      <div
-        className={`rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/84 to-zinc-950/88 shadow-[0_18px_70px_rgba(0,0,0,0.34)] ${className}`}
-      >
-        {children}
-      </div>
-    );
-  }
-
-  function PhotoCard({
-    src,
-    alt,
-    className = "",
-  }: {
-    src: string;
-    alt: string;
-    className?: string;
-  }) {
-    return (
-      <div className={`group overflow-hidden rounded-[26px] border border-white/10 bg-white/[0.02] ${className}`}>
-        <img
-          src={src}
-          alt={alt}
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-        />
-      </div>
-    );
-  }
-
-  function InfoCard({ title, text }: { title: string; text: string }) {
-    return (
-      <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
-        <div className="text-sm font-semibold text-white">{title}</div>
-        <p className="mt-3 text-sm leading-6 text-zinc-300">{text}</p>
-      </div>
-    );
-  }
-
-  function CaseSection({
-    id,
-    eyebrow,
-    title,
-    summary,
-    chips,
-    intro,
-    cards,
-    gallery,
-    extra,
-  }: {
-    id: string;
-    eyebrow: string;
-    title: string;
-    summary: string;
-    chips: string[];
-    intro: string;
-    cards: { title: string; text: string }[];
-    gallery: ReactNode;
-    extra?: ReactNode;
-  }) {
-    return (
-      <section
-        id={id}
-        className="relative mt-16 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.88),rgba(10,10,12,0.95))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42)] sm:scroll-mt-32 sm:p-8"
-      >
-        <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/12 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
-
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-          <div>
-            <SectionEyebrow>{eyebrow}</SectionEyebrow>
-            <h3 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              {title}
-            </h3>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
-              {summary}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2 lg:justify-end">
-            {chips.map((chip) => (
-              <Chip key={chip}>{chip}</Chip>
-            ))}
-          </div>
-        </div>
-
-        <details className="group mt-6 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] transition duration-300 open:bg-white/[0.04]">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:p-6">
-            <div>
-              <div className="text-sm font-semibold text-white">Развернуть кейс</div>
-              <div className="mt-1 text-sm text-zinc-400">{intro}</div>
-            </div>
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-zinc-300 transition duration-300 group-open:rotate-45 group-open:text-white">
-              +
-            </div>
-          </summary>
-
-          <div className="grid max-h-0 grid-rows-[0fr] overflow-hidden transition-all duration-500 ease-out group-open:max-h-[5000px] group-open:grid-rows-[1fr]">
-            <div className="min-h-0">
-              <div className="animate-reveal border-t border-white/10 p-5 pt-6 sm:p-6 sm:pt-6">
-                <div className="grid gap-4 lg:grid-cols-3">
-                  {cards.map((card) => (
-                    <InfoCard key={card.title} title={card.title} text={card.text} />
-                  ))}
-                </div>
-
-                <div className="mt-5">{gallery}</div>
-
-                {extra ? <div className="mt-5">{extra}</div> : null}
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <ContactButton label="Связаться" />
-                  <ContactButton label="Открыть контакты" secondary />
-                </div>
-              </div>
-            </div>
-          </div>
-        </details>
-      </section>
-    );
-  }
-
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#050507] text-zinc-100 selection:bg-violet-500/30 [scrollbar-color:#27272a_#09090b]">
       <style>{`
@@ -246,8 +269,8 @@ export default function Home() {
             to { opacity: 1; transform: translateY(0); }
           }
           @keyframes softPulse {
-            0%, 100% { transform: scale(1); opacity: .75; }
-            50% { transform: scale(1.06); opacity: 1; }
+            0%, 100% { transform: scale(1); opacity: .72; }
+            50% { transform: scale(1.05); opacity: 1; }
           }
           @keyframes reveal {
             from { opacity: 0; transform: translateY(14px); }
@@ -288,16 +311,16 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.04fr)_minmax(320px,0.96fr)] fade-up delay-1">
+        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] fade-up delay-1">
           <div className="order-1 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/88 to-zinc-950/88 shadow-[0_20px_80px_rgba(0,0,0,0.44)] lg:order-2">
-            <div className="relative aspect-[4/4.5] sm:aspect-[4/3.95] lg:aspect-[4/4.7]">
+            <div className="relative aspect-[4/4.7] sm:aspect-[4/4.05] lg:aspect-[4/4.7]">
               <img
                 src="/AGE-4.jpg"
                 alt="Антон Гиззатов"
                 className="h-full w-full object-cover object-[58%_center] sm:object-[66%_center] lg:object-[78%_center]"
               />
               <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
-                <div className="rounded-[22px] border border-white/10 bg-black/38 p-3 backdrop-blur-md sm:p-4">
+                <div className="rounded-[22px] border border-white/10 bg-black/28 p-3 backdrop-blur-md sm:p-4">
                   <div className="text-[11px] uppercase tracking-[0.24em] text-zinc-400">
                     Project / Producer / Operations
                   </div>
@@ -305,7 +328,7 @@ export default function Home() {
                     Антон Гиззатов
                   </div>
                   <div className="mt-2 text-sm leading-6 text-zinc-300 sm:max-w-[28rem]">
-                    Руководитель проектов / продюсер для сложных, срочных и многоуровневых задач.
+                    Middle+ / senior-ready профиль для сложных, срочных и многоуровневых задач.
                   </div>
                 </div>
               </div>
@@ -315,7 +338,7 @@ export default function Home() {
           <Surface className="order-2 p-5 backdrop-blur sm:p-7 lg:order-1 lg:p-8 xl:p-10">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-violet-200">
-                позиционирование под middle+ / senior-ready
+                middle+ / senior-ready positioning
               </div>
               <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
                 Москва · hybrid / project format
@@ -330,7 +353,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
-              Быстро вхожу в контекст, выстраиваю структуру, синхронизирую людей и довожу проект до результата без просадки по качеству.
+              Руководитель проектов / продюсер, который быстро входит в контекст, выстраивает структуру и доводит сложные проекты до управляемого результата.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2">
@@ -348,7 +371,7 @@ export default function Home() {
 
             <div className="mt-8 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Чем отличаюсь</div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почему это работает</div>
                 <div className="mt-3 grid gap-2.5">
                   {strengths.slice(0, 3).map((item) => (
                     <div key={item} className="text-sm leading-6 text-zinc-200">
@@ -360,15 +383,15 @@ export default function Home() {
 
               <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
                 <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Фокус</div>
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
                   <div className="mt-2 text-sm leading-6 text-zinc-100">
-                    Сложные проекты на стыке креатива, операционки и контроля.
+                    Руководитель проектов / продюсер / operations lead для media, event и контентных задач.
                   </div>
                 </div>
                 <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Быстрый вывод</div>
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что считывает рекрутер</div>
                   <div className="mt-2 text-sm leading-6 text-zinc-200">
-                    Не просто двигаю задачи — собираю управляемую систему вокруг результата.
+                    Не исполнитель отдельного блока, а человек, который собирает и удерживает всю систему проекта.
                   </div>
                 </div>
               </div>
@@ -378,10 +401,7 @@ export default function Home() {
 
         <section className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 fade-up delay-2">
           {metrics.map((item) => (
-            <div key={item.label} className="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_14px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
-              <div className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{item.value}</div>
-              <div className="mt-2 text-sm leading-6 text-zinc-400">{item.label}</div>
-            </div>
+            <MetricCard key={item.label} value={item.value} label={item.label} />
           ))}
         </section>
 
@@ -398,16 +418,13 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-6">
-              <ContactButton label="Связаться" />
-            </div>
           </Surface>
 
           <div className="grid gap-4">
             <Surface className="p-6 sm:p-8">
-              <SectionEyebrow>Где особенно полезен</SectionEyebrow>
+              <SectionEyebrow>Роли, под которые сайт продаёт сильнее всего</SectionEyebrow>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Когда моя роль работает сильнее всего
+                Где этот профиль выглядит наиболее дорогим
               </h2>
               <div className="mt-6 grid gap-3">
                 {roleFit.map((item) => (
@@ -419,26 +436,23 @@ export default function Home() {
             </Surface>
 
             <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-6 sm:p-8">
-              <SectionEyebrow>Позиционирование</SectionEyebrow>
+              <SectionEyebrow>Под офферы</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
-                Подхожу туда, где проекту нужен не просто исполнитель, а человек, который собирает систему и удерживает её в движении.
+                Сайт позиционирует меня не как “человека из медиа”, а как управленца на стыке креатива, процессов, аналитики и результата.
               </div>
-              <div className="mt-6">
-                <ContactButton label="Связаться" />
-              </div>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-200 sm:text-base">
+                Это усиливает отклик под вакансии project manager, продюсер, operations lead, coordinator lead, PM в media / event / content и гибридные роли с операционным контуром.
+              </p>
             </Surface>
           </div>
         </section>
 
         <section id="cases" className="mt-16 scroll-mt-28 sm:scroll-mt-32">
-          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <SectionEyebrow>Кейсы</SectionEyebrow>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Кейсы, где видно и креатив, и систему
-              </h2>
-            </div>
-            <ContactButton label="Связаться" secondary />
+          <div className="mb-6">
+            <SectionEyebrow>Кейсы</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Кейсы, где видно не только визуал, но и управленческий контур
+            </h2>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -497,58 +511,46 @@ export default function Home() {
           id="graduation"
           eyebrow="Флагманский кейс"
           title="Медиавыпускной — продюсирование события как цельной системы"
-          summary="Здесь видно меня как продюсера / руководителя проекта: я собирал не набор разрозненных задач, а единую систему из сценария, тайминга, визуала, команды, сметы и контроля исполнения."
+          summary="Не набор отдельных задач, а единая система из сценария, визуала, тайминга, сметы, команды и контроля исполнения. Это кейс, где видно и креатив, и управленческий контур."
           chips={["сценарий", "тайминги", "дизайн", "motion", "смета", "координация"]}
-          intro="Задача, сложность, результат, визуальная система и материалы управления — внутри одного блока."
+          intro="Задача, сложность, результат, видео и материалы управления — внутри одного блока."
           cards={[
             {
               title: "Задача",
-              text: "Организовать крупное мероприятие с награждением, визуальной системой, motion, сценарием, сметой и несколькими параллельными потоками работы.",
+              text: "Собрать крупное мероприятие с награждением, визуальной системой, motion, сценарием, сметой и несколькими параллельными потоками подготовки.",
             },
             {
               title: "Сложность",
-              text: "Высокий риск рассинхрона между людьми и блоками, зависимые тайминги и необходимость держать вместе контент, сцену, дизайн и оргчасть.",
+              text: "Высокий риск рассинхрона между людьми и блоками: сцена, контент, дизайн, оргчасть, материалы и зависимые тайминги.",
             },
             {
               title: "Результат",
-              text: "Вместо хаотичной подготовки — единая продюсерская логика, где сценарий, визуал, тайминги, бюджет и команда работают как система.",
+              text: "Вместо хаотичной подготовки — единая продюсерская логика, где сценарий, визуал, сроки, бюджет и команда работают как система.",
             },
           ]}
           gallery={
-            <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="grid gap-4">
-                <PhotoCard src="/cases/graduation/photo-1.jpg" alt="Медиавыпускной 1" className="aspect-[16/10]" />
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <PhotoCard src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[4/3]" />
-                  <PhotoCard src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[4/3]" />
-                </div>
-              </div>
-              <div className="grid gap-4">
-                <PhotoCard src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[4/3] lg:aspect-[4/4.15]" />
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                  <PhotoCard src="/cases/graduation/design-poster.jpg" alt="Афиша" className="aspect-[16/10]" />
-                  <PhotoCard src="/cases/graduation/design-badge.png" alt="Бейдж" className="aspect-[16/10]" />
-                </div>
-              </div>
+            <div className="grid gap-4 xl:grid-cols-12">
+              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="xl:col-span-4" />
+              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" title="Motion 02" className="xl:col-span-4" />
+              <MediaImage src="/cases/graduation/photo-1.jpg" alt="Медиавыпускной 1" className="aspect-[16/10] xl:col-span-4" />
+              <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] xl:col-span-6" />
+              <MediaImage src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[16/10] xl:col-span-3" />
+              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-3" />
             </div>
           }
-          extra={
-            <div className="grid gap-4 xl:grid-cols-2">
+          assets={
+            <div className="grid gap-4 lg:grid-cols-2">
               <div className="grid gap-4 sm:grid-cols-2">
-                <PhotoCard src="/cases/graduation/script.png" alt="Фрагмент сценария" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/graduation/timings.png" alt="Фрагмент таймингов" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/graduation/budget.png" alt="Фрагмент сметы" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/graduation/tasks.png" alt="Фрагмент задач" className="aspect-[4/3]" />
+                <AssetTile src="/cases/graduation/design-poster.jpg" alt="Афиша" title="Афиша" />
+                <AssetTile src="/cases/graduation/design-badge.png" alt="Бейдж" title="Бейдж" />
+                <AssetTile src="/cases/graduation/design-popsocket.png" alt="Попсокет" title="Попсокет" />
+                <AssetTile src="/cases/graduation/design-shopper.png" alt="Шоппер" title="Шоппер" />
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[26px] border border-white/10 bg-white/[0.02] p-2">
-                  <video src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" autoPlay muted loop playsInline controls className="aspect-[4/3] w-full rounded-[20px] bg-black object-cover" />
-                </div>
-                <div className="rounded-[26px] border border-white/10 bg-white/[0.02] p-2">
-                  <video src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" autoPlay muted loop playsInline controls className="aspect-[4/3] w-full rounded-[20px] bg-black object-cover" />
-                </div>
-                <PhotoCard src="/cases/graduation/chat-1.png" alt="Командная координация" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/graduation/chat-3.png" alt="Дедлайны и правки" className="aspect-[4/3]" />
+                <AssetTile src="/cases/graduation/script.png" alt="Фрагмент сценария" title="Сценарий" />
+                <AssetTile src="/cases/graduation/timings.png" alt="Тайминги" title="Тайминги" />
+                <AssetTile src="/cases/graduation/budget.png" alt="Смета" title="Смета" />
+                <AssetTile src="/cases/graduation/tasks.png" alt="Задачи" title="Задачи" />
               </div>
             </div>
           }
@@ -556,11 +558,11 @@ export default function Home() {
 
         <CaseSection
           id="glowbyte"
-          eyebrow="Коммерческий proof-case"
-          title="GlowByte — работа по ТЗ клиента и управление продакшеном"
-          summary="Этот кейс показывает, что я умею работать не только во внутренних системах, но и в коммерческом формате: есть бренд, внешнее ТЗ, продакшен-команда и результат, который нужно сдать управляемо и без хаоса."
-          chips={["GlowByte", "ТЗ", "команда", "3000+ фото", "видео"]}
-          intro="Внутри — задача, собранный pipeline и материалы, которые подтверждают роль управления."
+          eyebrow="Коммерческий кейс"
+          title="GlowByte — продакшн по ТЗ клиента и управление командой под результат"
+          summary="Коммерческий кейс, где важно было не просто снять красиво, а собрать людей, требования, pipeline и выдачу результата без хаоса и потери качества."
+          chips={["GlowByte", "ТЗ", "команда", "контент", "3000+ фото"]}
+          intro="Коммерческий контекст, команда, контроль качества, видео и логика сдачи материалов."
           cards={[
             {
               title: "Задача",
@@ -568,135 +570,117 @@ export default function Home() {
             },
             {
               title: "Что собрал",
-              text: "Команду, распределение зон, требования к контенту, pipeline съёмка → отбор → обработка → сдача и контроль качества по срокам.",
+              text: "Команду, распределение зон, требования к контенту, pipeline съёмка → отбор → обработка → сдача и контроль качества.",
             },
             {
-              title: "Что доказывает кейс",
-              text: "Умею работать по внешнему ТЗ, собирать коммерческий продакшн и управлять командой, а не только участвовать в креативной части.",
+              title: "Что доказывает",
+              text: "Умею работать по внешнему ТЗ, управлять продакшеном и выдавать результат как система, а не как набор разрозненных действий.",
             },
           ]}
           gallery={
-            <div className="grid gap-4 lg:grid-cols-[1.06fr_0.94fr]">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <PhotoCard src="/cases/glowbyte/photo-1.jpg" alt="GlowByte 1" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[4/3]" />
-                <PhotoCard src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[4/3]" />
-              </div>
-              <div className="grid gap-4">
-                <PhotoCard src="/cases/glowbyte/contract-1.png" alt="Фрагмент ТЗ GlowByte" className="aspect-[16/10]" />
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                  <PhotoCard src="/cases/glowbyte/chat-1.png" alt="Командная координация GlowByte" className="aspect-[16/10]" />
-                  <PhotoCard src="/cases/glowbyte/chat-2.png" alt="Распределение зон GlowByte" className="aspect-[16/10]" />
-                </div>
-              </div>
+            <div className="grid gap-4 xl:grid-cols-12">
+              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4" title="Итоговое видео кейса" className="xl:col-span-6" />
+              <MediaImage src="/cases/glowbyte/photo-1.jpg" alt="GlowByte 1" className="aspect-[16/10] xl:col-span-6" />
+              <MediaImage src="/cases/glowbyte/photo-2.jpg" alt="GlowByte 2" className="aspect-[16/10] xl:col-span-4" />
+              <MediaImage src="/cases/glowbyte/photo-3.jpg" alt="GlowByte 3" className="aspect-[16/10] xl:col-span-4" />
+              <MediaImage src="/cases/glowbyte/photo-4.jpg" alt="GlowByte 4" className="aspect-[16/10] xl:col-span-4" />
             </div>
           }
-          extra={
-            <div className="max-w-xl">
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.02] p-2">
-                <video src="https://res.cloudinary.com/dvb1limg4/video/upload/video_t7tuw6.mp4" autoPlay muted loop playsInline controls className="aspect-[16/10] w-full rounded-[20px] bg-black object-cover" />
-              </div>
+          assets={
+            <div className="grid gap-4 lg:grid-cols-3">
+              <AssetTile src="/cases/glowbyte/contract-1.png" alt="Фрагмент ТЗ" title="Фрагмент ТЗ" />
+              <AssetTile src="/cases/glowbyte/chat-1.png" alt="Координация команды" title="Координация" />
+              <AssetTile src="/cases/glowbyte/chat-2.png" alt="Распределение зон" title="Распределение зон" />
             </div>
           }
         />
 
         <CaseSection
           id="gf"
-          eyebrow="Кейс 03"
-          title="GF — выручка, вал и управленческие гипотезы"
-          summary="Этот кейс показывает мою способность работать не только с креативом, но и с цифрами, логикой контроля и гипотезами для принятия решений."
-          chips={["аналитика", "план / факт", "вал", "решения"]}
-          intro="Внутри — что анализировал, как использовал данные и чем это полезно для управления."
+          eyebrow="Аналитический кейс"
+          title="GF — план / факт, вал и управленческие гипотезы"
+          summary="Кейс показывает, что я работаю не только с креативом, но и с цифрами: собираю структуру данных, вижу отклонения и перевожу аналитику в управленческие решения."
+          chips={["план / факт", "ежедневный контроль", "вал", "гипотезы"]}
+          intro="Что анализировал, как думал и что этот кейс доказывает."
           cards={[
             {
               title: "Что делал",
-              text: "Собирал и структурировал данные по выручке, визуализировал план / факт и отклонения, отслеживал динамику и выделял проблемные точки.",
+              text: "Собирал и структурировал данные по выручке, визуализировал план / факт, отслеживал динамику и выделял проблемные точки.",
             },
             {
               title: "Как думал",
-              text: "Не ограничивался цифрами: предлагал гипотезы по обучению, корпоративной культуре, адаптации, сетям и упрощению регламентов.",
+              text: "Не ограничивался отчётностью: формировал гипотезы по обучению, адаптации, корпоративной культуре и упрощению регламентов.",
             },
             {
-              title: "Что доказывает кейс",
-              text: "Умею работать с аналитикой как с управленческим инструментом и превращать показатели в решения, а не в отчётность ради отчётности.",
+              title: "Что доказывает",
+              text: "Умею использовать аналитику как инструмент управления, а не как пассивную таблицу с цифрами.",
             },
           ]}
           gallery={
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              <PhotoCard src="/cases/gf/gf-1.png" alt="План факт" className="aspect-[4/3]" />
-              <PhotoCard src="/cases/gf/gf-2.png" alt="Динамика выручки" className="aspect-[4/3]" />
-              <PhotoCard src="/cases/gf/chat-1.png" alt="Гипотезы улучшения" className="aspect-[4/3]" />
-              <PhotoCard src="/cases/gf/chat-2.png" alt="Управленческие предложения" className="aspect-[4/3]" />
+            <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+              <AssetTile src="/cases/gf/gf-1.png" alt="План / факт" title="План / факт" />
+              <AssetTile src="/cases/gf/gf-2.png" alt="Динамика выручки" title="Динамика выручки" />
+              <AssetTile src="/cases/gf/chat-1.png" alt="Гипотезы улучшения" title="Гипотезы" />
+              <AssetTile src="/cases/gf/chat-2.png" alt="Управленческие предложения" title="Управленческие выводы" />
             </div>
           }
         />
 
         <CaseSection
           id="bpmn"
-          eyebrow="Кейс 04"
-          title="Проектирование и оптимизация процессов (BPMN)"
-          summary="Здесь акцент не на повторении описаний, а на сути: умею не только вести проект, но и проектировать правила его работы — роли, документы, согласования и контроль."
-          chips={["BPMN", "роли", "согласования", "SLA"]}
-          intro="Внутри — что было спроектировано, что изменилось и почему это усиливает мой профиль в project / operations."
+          eyebrow="Процессный кейс"
+          title="BPMN — проектирование процессов, ролей и точек контроля"
+          summary="Кейс не про дублирование описаний, а про конкретный навык: превращать разрозненный процесс в понятную логику со стадиями, ролями, согласованиями и прозрачным контуром управления."
+          chips={["BPMN", "роли", "согласования", "контроль", "SLA"]}
+          intro="Что спроектировал, что изменилось и почему это усиливает мой профиль под управленческие роли."
           cards={[
             {
               title: "Что сделал",
-              text: "Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль сроков, документов и финансовых потоков.",
+              text: "Разложил процесс на этапы, выделил роли, зафиксировал точки согласования и встроил контроль по срокам, документам и переходам.",
             },
             {
               title: "Что изменилось",
-              text: "Процесс стал прозрачнее: понятнее зоны ответственности, логика прохождения документов и точки, где нужен контроль и SLA.",
+              text: "Процесс стал понятнее: где начинается задача, кто принимает решение, на каком этапе возникает контроль и где снимается риск потерь.",
             },
             {
-              title: "Что доказывает кейс",
-              text: "Могу не только координировать текущую работу, но и проектировать основу системы, на которой эта работа держится.",
+              title: "Что доказывает",
+              text: "Я умею не только вести текущий проект, но и проектировать сами правила игры внутри системы.",
             },
           ]}
           gallery={
             <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-              <PhotoCard src="/cases/bpmn/bpmn-1.png" alt="BPMN схема" className="aspect-[4/3]" />
-              <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
-                <div className="text-sm font-semibold text-white">Почему этот кейс важен</div>
-                <p className="mt-3 text-sm leading-7 text-zinc-300">
-                  Он показывает, что я умею мыслить не только задачами и дедлайнами, но и архитектурой процесса: кто, когда, через что, по каким правилам и с какими контрольными точками двигает работу дальше.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {["структура", "логика", "контроль", "масштабируемость"].map((item) => (
-                    <Chip key={item}>{item}</Chip>
-                  ))}
-                </div>
+              <MediaImage src="/cases/bpmn/bpmn-1.png" alt="BPMN схема" className="aspect-[16/10]" />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <InfoCard title="Сильный сигнал для рекрутера" text="BPMN усиливает профиль под project manager / operations роли, потому что показывает не только координацию, но и умение проектировать процессную логику." />
+                <InfoCard title="Почему блок стал лучше" text="Убрано повторение одного и того же смысла разными словами. Теперь блок короче, точнее и быстрее считывается." />
               </div>
             </div>
           }
         />
 
-        <section id="process" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[0.86fr_1.14fr] sm:scroll-mt-32">
+        <section id="process" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[0.92fr_1.08fr] sm:scroll-mt-32">
           <Surface className="p-6 sm:p-8">
-            <SectionEyebrow>Как проходит работа со мной</SectionEyebrow>
+            <SectionEyebrow>Как работаю</SectionEyebrow>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Понятный процесс вместо ручного хаоса
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-zinc-300">
-              Мне важно не просто двигать проект по задачам, а собирать систему, в которой понятно, кто за что отвечает, как всё связано и где находится контроль.
+              Мне важно не просто двигать задачи, а собирать систему, в которой понятно кто за что отвечает, где находится контроль и как всё связано между собой.
             </p>
-            <div className="mt-6">
-              <ContactButton label="Связаться" />
-            </div>
           </Surface>
 
           <div className="grid gap-4 sm:grid-cols-2">
             {process.map((item) => (
-              <div key={item.step} className="rounded-[30px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 shadow-[0_14px_50px_rgba(0,0,0,0.3)] transition duration-300 hover:-translate-y-0.5">
-                <div className="text-sm font-medium uppercase tracking-[0.22em] text-violet-300">{item.step}</div>
+              <Surface key={item.step} className="p-6">
+                <div className="text-sm font-medium uppercase tracking-[0.22em] text-orange-300">{item.step}</div>
                 <div className="mt-3 text-xl font-semibold text-white">{item.title}</div>
                 <p className="mt-3 text-sm leading-6 text-zinc-300">{item.text}</p>
-              </div>
+              </Surface>
             ))}
           </div>
         </section>
 
-        <section id="tools" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[0.84fr_1.16fr] sm:scroll-mt-32">
+        <section id="tools" className="mt-16 scroll-mt-28 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] sm:scroll-mt-32">
           <Surface className="p-6 sm:p-8">
             <SectionEyebrow>Инструменты</SectionEyebrow>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -705,15 +689,12 @@ export default function Home() {
             <p className="mt-4 text-base leading-7 text-zinc-300">
               Хорошо чувствую стык между контентом и операционкой: могу говорить и с креативной командой, и с теми, кому нужны сроки, предсказуемость и прозрачный результат.
             </p>
-            <div className="mt-6">
-              <ContactButton label="Связаться" />
-            </div>
           </Surface>
 
           <Surface className="p-6 sm:p-8">
             <div className="flex flex-wrap gap-3">
               {tools.map((item) => (
-                <span key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-zinc-200 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">
+                <span key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-zinc-200">
                   {item}
                 </span>
               ))}
@@ -721,56 +702,47 @@ export default function Home() {
           </Surface>
         </section>
 
-        <section id="contacts" className="mt-16 mb-8 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(91,33,182,0.18),rgba(9,9,11,0.96))] shadow-[0_24px_90px_rgba(0,0,0,0.42)] sm:scroll-mt-32">
-          <div className="relative grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch lg:gap-8 lg:p-10">
-            <div className="pointer-events-none absolute left-0 top-0 h-40 w-40 rounded-full bg-violet-500/18 blur-3xl" />
-            <div className="pointer-events-none absolute bottom-0 right-0 h-40 w-40 rounded-full bg-orange-500/14 blur-3xl" />
-
-            <div className="relative flex flex-col justify-between">
+        <section id="contacts" className="mt-16 mb-8 scroll-mt-28 sm:scroll-mt-32">
+          <Surface className="overflow-hidden bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(10,10,12,0.98))]">
+            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
               <div>
                 <SectionEyebrow>Контакты</SectionEyebrow>
                 <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                   Если вам нужен руководитель проектов / продюсер, который собирает систему, а не просто двигает задачи
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300">
-                  Могу подключиться к роли, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Открыт к обсуждению роли, формата и задач.
+                  Открыт к ролям, где нужно связать команду, процессы, визуал, сроки и результат в одну рабочую логику. Особенно интересны project / producer / operations роли на стыке media, event и content.
                 </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <ContactButton label="Написать в Telegram" href="https://t.me/Rovers1236" />
+                  <ContactButton label="Отправить письмо" href="mailto:anton6370@gmail.com" secondary />
+                </div>
               </div>
 
-              <div className="mt-6 rounded-[26px] border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Коротко</div>
-                <div className="mt-2 text-lg font-semibold text-white sm:text-xl">
-                  Особенно полезен там, где проект нужно быстро собрать, убрать хаос и удержать команду в рабочем ритме.
+              <div className="grid gap-4 content-start">
+                <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Telegram</div>
+                  <a href="https://t.me/Rovers1236" className="mt-3 block text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                    @Rovers1236
+                  </a>
+                  <div className="mt-2 text-sm text-zinc-400">Быстрый способ связаться и обсудить следующий шаг</div>
+                </div>
+
+                <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
+                  <a href="mailto:anton6370@gmail.com" className="mt-3 block text-xl font-semibold tracking-tight text-white break-all sm:text-2xl">
+                    anton6370@gmail.com
+                  </a>
+                  <div className="mt-2 text-sm text-zinc-400">Для вакансий, обсуждения роли и рабочих деталей</div>
                 </div>
               </div>
             </div>
-
-            <div className="relative grid gap-4 content-start">
-              <a href="https://t.me/Rovers1236" className="group rounded-[28px] border border-white/10 bg-white/[0.06] p-5 shadow-[0_12px_34px_rgba(0,0,0,0.18)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Telegram</div>
-                <div className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">@Rovers1236</div>
-                <div className="mt-2 text-sm text-zinc-300">Основной и самый быстрый способ связи</div>
-              </a>
-
-              <a href="mailto:anton6370@gmail.com" className="group rounded-[28px] border border-white/10 bg-white/[0.06] p-5 shadow-[0_12px_34px_rgba(0,0,0,0.18)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Почта</div>
-                <div className="mt-3 break-all text-2xl font-semibold tracking-tight text-white sm:text-3xl">anton6370@gmail.com</div>
-                <div className="mt-2 text-sm text-zinc-300">Для отклика, деталей по роли и рабочих обсуждений</div>
-              </a>
-
-              <div className="pt-2 grid gap-3 sm:grid-cols-2">
-                <ContactButton label="Связаться" className="w-full" />
-                <ContactButton label="Написать в Telegram" href="https://t.me/Rovers1236" secondary className="w-full" />
-              </div>
-            </div>
-          </div>
+          </Surface>
         </section>
       </div>
 
       <div className="fixed inset-x-4 bottom-4 z-50 sm:hidden">
-        <div className="rounded-[22px] border border-white/10 bg-zinc-950/80 p-2 backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-          <ContactButton label="Связаться" className="w-full" />
-        </div>
+        <ContactButton label="Связаться" className="w-full" />
       </div>
     </main>
   );
