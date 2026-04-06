@@ -824,7 +824,7 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="fixed inset-x-4 bottom-4 z-50 sm:hidden">
+      <div className="hidden">
         <ContactButton label="Связаться" className="w-full" />
       </div>
     </main>
