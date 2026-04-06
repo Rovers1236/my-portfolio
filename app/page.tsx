@@ -52,8 +52,10 @@ function Chip({ children, subtle = false }: { children: ReactNode; subtle?: bool
 function Surface({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/84 to-zinc-950/88 shadow-[0_18px_70px_rgba(0,0,0,0.34)] ${className}`}
+      className={`group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/84 to-zinc-950/88 shadow-[0_18px_70px_rgba(0,0,0,0.34)] transition duration-300 hover:-translate-y-0.5 hover:border-white/15 hover:shadow-[0_24px_90px_rgba(0,0,0,0.42)] ${className}`}
     >
+      <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-300 group-hover:via-white/30" />
+      <div className="pointer-events-none absolute -right-8 top-6 h-24 w-24 rounded-full bg-violet-500/8 blur-3xl opacity-0 transition duration-300 group-hover:opacity-100" />
       {children}
     </div>
   );
@@ -61,16 +63,19 @@ function Surface({ children, className = "" }: { children: ReactNode; className?
 
 function MetricCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_14px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
-      <div className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{value}</div>
-      <div className="mt-2 text-sm leading-6 text-zinc-400">{label}</div>
+    <div className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_14px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_22px_70px_rgba(0,0,0,0.34)]">
+      <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-300 group-hover:via-violet-300/40" />
+      <div className="pointer-events-none absolute -right-8 -top-6 h-20 w-20 rounded-full bg-violet-500/8 blur-3xl opacity-0 transition duration-300 group-hover:opacity-100" />
+      <div className="relative text-3xl font-semibold tracking-tight text-white sm:text-4xl">{value}</div>
+      <div className="relative mt-2 text-sm leading-6 text-zinc-400">{label}</div>
     </div>
   );
 }
 
 function InfoCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
+    <div className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_18px_48px_rgba(0,0,0,0.28)]">
+      <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-white/28" />
       <div className="text-sm font-semibold text-white">{title}</div>
       <p className="mt-3 text-sm leading-6 text-zinc-300">{text}</p>
     </div>
@@ -79,15 +84,17 @@ function InfoCard({ title, text }: { title: string; text: string }) {
 
 function MediaImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
-    <div className={`group overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] ${className}`}>
-      <img src={src} alt={alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+    <div className={`group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.34)] ${className}`}>
+      <div className="pointer-events-none absolute inset-x-5 top-0 z-10 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-white/30" />
+      <img src={src} alt={alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]" />
     </div>
   );
 }
 
 function MediaVideo({ src, title, className = "" }: { src: string; title: string; className?: string }) {
   return (
-    <div className={`group overflow-hidden rounded-[24px] border border-white/10 bg-black/30 ${className}`}>
+    <div className={`group relative overflow-hidden rounded-[24px] border border-white/10 bg-black/30 transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.36)] ${className}`}>
+      <div className="pointer-events-none absolute inset-x-5 top-0 z-10 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-violet-300/40" />
       <video
         src={src}
         autoPlay
@@ -97,7 +104,7 @@ function MediaVideo({ src, title, className = "" }: { src: string; title: string
         controls
         className="h-full w-full object-cover"
       />
-      <div className="border-t border-white/10 px-4 py-3 text-xs uppercase tracking-[0.18em] text-zinc-400">
+      <div className="border-t border-white/10 px-4 py-3 text-xs uppercase tracking-[0.18em] text-zinc-400 transition duration-300 group-hover:text-zinc-200">
         {title}
       </div>
     </div>
@@ -106,7 +113,8 @@ function MediaVideo({ src, title, className = "" }: { src: string; title: string
 
 function AssetTile({ src, alt, title }: { src: string; alt: string; title: string }) {
   return (
-    <div className="group overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.03] p-2 transition duration-300 hover:-translate-y-0.5 hover:border-white/15">
+    <div className="group relative overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.03] p-2 transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_18px_48px_rgba(0,0,0,0.3)]">
+      <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-white/28" />
       <img src={src} alt={alt} className="aspect-[16/10] w-full rounded-[16px] object-cover transition duration-500 group-hover:scale-[1.02]" />
       <div className="px-2 pb-1 pt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 transition duration-300 group-hover:text-zinc-300">
         {title}
@@ -139,8 +147,9 @@ function CaseSection({
   return (
     <section
       id={id}
-      className="relative mt-16 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.88),rgba(10,10,12,0.95))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42)] sm:scroll-mt-32 sm:p-8"
+      className="group relative mt-16 scroll-mt-28 overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.88),rgba(10,10,12,0.95))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42)] transition duration-300 hover:border-white/15 hover:shadow-[0_30px_110px_rgba(0,0,0,0.48)] sm:scroll-mt-32 sm:p-8"
     >
+      <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-violet-200/35" />
       <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/12 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
 
@@ -368,7 +377,9 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px]">
+            <div className="pointer-events-none absolute left-12 top-20 hidden h-44 w-44 rounded-full bg-violet-500/10 blur-3xl lg:block" />
+
+            <h1 className="relative mt-6 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px]">
               Собираю хаос
               <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
                 в работающую систему.
