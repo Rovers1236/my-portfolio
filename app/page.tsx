@@ -361,7 +361,7 @@ export default function Home() {
           <Surface className="order-2 p-5 backdrop-blur sm:p-7 lg:order-1 lg:p-8 xl:p-10">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-violet-200">
-                middle+ / senior-ready positioning
+                middle / middle+ positioning
               </div>
               <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
                 Москва · hybrid / project format
