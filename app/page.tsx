@@ -1,5 +1,11 @@
 import type { ReactNode } from "react";
 
+export const metadata = {
+  title: "Антон Гиззатов — Project Manager / Producer",
+  description:
+    "Портфолио Антона Гиззатова: project management, production, operations, BPMN, аналитика и кейсы на стыке медиа, event и процессов.",
+};
+
 type CaseCard = { title: string; text: string };
 
 function SectionEyebrow({ children }: { children: ReactNode }) {
@@ -82,6 +88,27 @@ function InfoCard({ title, text }: { title: string; text: string }) {
   );
 }
 
+function ProofStrip({
+  items,
+  className = "",
+}: {
+  items: { value: string; label: string }[];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`grid gap-3 rounded-[26px] border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2 xl:grid-cols-4 ${className}`}
+    >
+      {items.map((item) => (
+        <div key={item.label} className="rounded-[20px] border border-white/10 bg-black/20 px-4 py-4">
+          <div className="text-2xl font-semibold tracking-tight text-white">{item.value}</div>
+          <div className="mt-1 text-sm leading-6 text-zinc-400">{item.label}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function MediaImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.34)] ${className}`}>
@@ -151,7 +178,7 @@ function CaseSection({
     >
       <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-300 group-hover:via-violet-200/35" />
       <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-500/12 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-orange-500/8 blur-3xl" />
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div>
@@ -207,6 +234,13 @@ export default function Home() {
     { value: "2M ₽", label: "закупки и оргбюджеты" },
     { value: "30", label: "человек в командах и подрядчиках" },
     { value: "3000+", label: "единиц контента в коммерческих кейсах" },
+  ];
+
+  const proofItems = [
+    { value: "12 000+", label: "участников" },
+    { value: "2M ₽", label: "закупки и оргбюджеты" },
+    { value: "8 / 6", label: "процессов описано / оптимизировано" },
+    { value: "AS IS → TO BE", label: "процессная логика" },
   ];
 
   const highlights = [
@@ -268,6 +302,41 @@ export default function Home() {
     "Фото / видео продакшн",
   ];
 
+  const casePreviews = [
+    {
+      id: "graduation",
+      title: "Медиавыпускной",
+      desc: "Флагманский кейс: продюсирование, визуальная система, сценарий, тайминг и координация.",
+      tags: ["флагман", "сценарий", "дизайн", "координация"],
+      image: "/cases/graduation-cover.jpg",
+      featured: true,
+    },
+    {
+      id: "glowbyte",
+      title: "GlowByte",
+      desc: "Коммерческий продакшн по ТЗ клиента и управление командой под результат.",
+      tags: ["бренд", "ТЗ", "команда", "контент"],
+      image: "/cases/glowbyte-cover.jpg",
+      featured: false,
+    },
+    {
+      id: "gf",
+      title: "GF / показатели",
+      desc: "План / факт, аналитика и управленческие гипотезы как инструмент решений.",
+      tags: ["аналитика", "план / факт", "гипотезы"],
+      image: "/cases/gf-cover.png",
+      featured: false,
+    },
+    {
+      id: "bpmn",
+      title: "BPMN",
+      desc: "Проектирование процессов, ролей, согласований и логики контроля.",
+      tags: ["процессы", "роли", "контроль"],
+      image: "/cases/bpmn-cover.png",
+      featured: false,
+    },
+  ];
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#050507] text-zinc-100 selection:bg-violet-500/30 [scrollbar-color:#27272a_#09090b]">
       <style>{`
@@ -278,8 +347,8 @@ export default function Home() {
             to { opacity: 1; transform: translateY(0); }
           }
           @keyframes softPulse {
-            0%, 100% { transform: scale(1); opacity: .72; }
-            50% { transform: scale(1.05); opacity: 1; }
+            0%, 100% { transform: scale(1); opacity: .55; }
+            50% { transform: scale(1.04); opacity: .82; }
           }
           @keyframes reveal {
             from { opacity: 0; transform: translateY(14px); }
@@ -289,19 +358,18 @@ export default function Home() {
           .delay-1 { animation-delay: .06s; }
           .delay-2 { animation-delay: .14s; }
           .delay-3 { animation-delay: .22s; }
-          .pulse-soft { animation: softPulse 7s ease-in-out infinite; }
+          .pulse-soft { animation: softPulse 8s ease-in-out infinite; }
           details[open] .animate-reveal { animation: reveal .45s ease-out both; }
         }
         summary::-webkit-details-marker { display: none; }
       `}</style>
 
-      <div className="fixed inset-0 -z-30 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(249,115,22,0.12),transparent_24%),linear-gradient(to_bottom,#040405,#09090c_42%,#050507)]" />
-      <div className="fixed inset-0 -z-30 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:42px_42px]" />
-      <div className="pointer-events-none fixed left-[8%] top-24 -z-20 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl pulse-soft" />
-      <div className="pointer-events-none fixed bottom-16 right-[6%] -z-20 h-56 w-56 rounded-full bg-orange-500/10 blur-3xl pulse-soft" />
+      <div className="fixed inset-0 -z-30 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.14),transparent_32%),linear-gradient(to_bottom,#040405,#09090c_42%,#050507)]" />
+      <div className="fixed inset-0 -z-30 opacity-[0.035] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:42px_42px]" />
+      <div className="pointer-events-none fixed left-[10%] top-24 -z-20 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl pulse-soft" />
       <div className="pointer-events-none fixed inset-x-0 top-0 z-40 h-28 bg-gradient-to-b from-[#050507] via-[#050507]/88 to-transparent sm:h-32" />
 
-      <div className="mx-auto max-w-7xl px-4 pb-28 pt-24 sm:px-6 sm:pt-30 lg:px-8 lg:pb-8">
+      <div className="mx-auto max-w-7xl px-4 pb-28 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pb-8">
         <header className="fade-up fixed left-4 right-4 top-3 z-50 rounded-[24px] border border-white/10 bg-zinc-950/78 px-4 py-3 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:left-6 sm:right-6 lg:left-8 lg:right-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
@@ -320,7 +388,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] fade-up delay-1">
+        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.02fr)_minmax(320px,0.98fr)] fade-up delay-1">
           <div className="order-1 grid gap-4 lg:order-2 lg:auto-rows-max">
             <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900/88 to-zinc-950/88 shadow-[0_20px_80px_rgba(0,0,0,0.44)]">
               <div className="relative aspect-[4/4.7] sm:aspect-[4/4.05] lg:aspect-[4/3.55]">
@@ -345,23 +413,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 lg:col-span-1">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат работы</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Hybrid / project format, быстрый вход в контекст, спокойная коммуникация и высокий темп исполнения без долгой раскачки.
+                  Hybrid / project format, быстрый вход в контекст, спокойная коммуникация и высокий темп исполнения.
                 </div>
               </div>
-              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4 lg:col-span-1">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роли</div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Где особенно полезен</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Project manager / producer / operations lead для media, event, content и гибридных команд с операционным контуром.
-                </div>
-              </div>
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 sm:col-span-2 lg:col-span-1">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Тип задач</div>
-                <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Особенно полезен там, где много хаоса, зависимых блоков, сжатые сроки и нужно быстро собрать проект в управляемую систему.
+                  Сложные проекты с несколькими зависимыми блоками, сжатыми сроками и большим объёмом координации.
                 </div>
               </div>
             </div>
@@ -370,7 +432,7 @@ export default function Home() {
           <Surface className="order-2 p-5 backdrop-blur sm:p-7 lg:order-1 lg:p-8 xl:p-10">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-violet-200">
-                middle / middle+ positioning
+                middle+ / future senior
               </div>
               <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
                 Москва · hybrid / project format
@@ -403,7 +465,9 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-8 grid gap-3 md:grid-cols-3">
+            <ProofStrip items={proofItems} className="mt-8" />
+
+            <div className="mt-8 grid gap-3 md:grid-cols-[1.15fr_0.85fr]">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что даю проекту</div>
                 <div className="mt-3 grid gap-2.5">
@@ -413,17 +477,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-4">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и позиционирование</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Руководитель проектов / продюсер / operations lead для задач, где важно не просто исполнение, а управляемый результат.
-                </div>
-              </div>
-
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Какой сигнал даёт профиль</div>
-                <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Не исполнитель отдельного блока, а человек, который собирает проект целиком, держит связи между блоками и доводит систему до результата.
+                  Не исполнитель отдельного блока, а управленец на стыке production, operations и проектной логики.
                 </div>
               </div>
             </div>
@@ -455,20 +512,20 @@ export default function Home() {
               </div>
             </Surface>
 
-            <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-6 sm:p-8">
+            <Surface className="bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/8 p-6 sm:p-8">
               <SectionEyebrow>Что это даёт бизнесу</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
                 Не просто сильного исполнителя, а человека, который снижает хаос, удерживает темп и переводит проект в управляемый режим.
               </div>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-200 sm:text-base">
-                За счёт этого профиль сильнее продаётся под вакансии, где нужен не отдельный креативный блок, а владелец операционной логики проекта.
+                Сильнее всего это считывается в ролях, где нужен владелец операционной логики, а не отдельный креативный блок.
               </p>
             </Surface>
           </div>
 
           <div className="grid gap-4">
             <Surface className="p-6 sm:p-8">
-              <SectionEyebrow>Роли, под которые сайт продаёт сильнее всего</SectionEyebrow>
+              <SectionEyebrow>Роли, под которые профиль считывается сильнее всего</SectionEyebrow>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Где этот профиль выглядит наиболее дорогим
               </h2>
@@ -482,13 +539,20 @@ export default function Home() {
             </Surface>
 
             <Surface className="p-6 sm:p-8">
-              <SectionEyebrow>Под офферы</SectionEyebrow>
+              <SectionEyebrow>Процессы и логика</SectionEyebrow>
               <div className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
-                Сайт позиционирует меня не как “человека из медиа”, а как управленца на стыке креатива, процессов, аналитики и результата.
+                Есть опыт не только в координации, но и в сборке самой системы: роли, переходы, контрольные точки и контур управления.
               </div>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">
-                Это усиливает отклик под вакансии project manager, продюсер, operations lead, coordinator lead, PM в media / event / content и гибридные роли с операционным контуром.
-              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                  <div className="text-2xl font-semibold tracking-tight text-white">8</div>
+                  <div className="mt-1 text-sm leading-6 text-zinc-400">процессов описано</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                  <div className="text-2xl font-semibold tracking-tight text-white">6</div>
+                  <div className="mt-1 text-sm leading-6 text-zinc-400">процессов оптимизировано</div>
+                </div>
+              </div>
             </Surface>
           </div>
         </section>
@@ -499,49 +563,30 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Кейсы, где видно не только визуал, но и управленческий контур
             </h2>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300">
+              Один флагманский кейс, коммерческий продакшн, аналитика и процессная логика — всё, что показывает меня не только как человека из медиа, но и как управленца.
+            </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                id: "graduation",
-                title: "Медиавыпускной",
-                desc: "Флагманский кейс: продюсирование, визуальная система, сценарий, тайминг и координация.",
-                tags: ["флагман", "сценарий", "дизайн", "координация"],
-                image: "/cases/graduation-cover.jpg",
-              },
-              {
-                id: "glowbyte",
-                title: "GlowByte",
-                desc: "Коммерческий продакшн по ТЗ клиента и управление командой под результат.",
-                tags: ["бренд", "ТЗ", "команда", "контент"],
-                image: "/cases/glowbyte-cover.jpg",
-              },
-              {
-                id: "gf",
-                title: "GF / показатели",
-                desc: "План / факт, аналитика и управленческие гипотезы как инструмент решений.",
-                tags: ["аналитика", "план / факт", "гипотезы"],
-                image: "/cases/gf-cover.png",
-              },
-              {
-                id: "bpmn",
-                title: "BPMN",
-                desc: "Проектирование процессов, ролей, согласований и логики контроля.",
-                tags: ["процессы", "роли", "контроль"],
-                image: "/cases/bpmn-cover.png",
-              },
-            ].map((item) => (
+            {casePreviews.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/82 shadow-[0_16px_60px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-white/15"
+                className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-950/82 shadow-[0_16px_60px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-white/15 ${
+                  item.featured ? "md:col-span-2 xl:col-span-2" : ""
+                }`}
               >
                 <img src={item.image} alt={item.title} className="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-700 group-hover:scale-105 group-hover:opacity-45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/15" />
-                <div className="relative flex h-[290px] flex-col justify-end p-6">
-                  <div className="text-xl font-semibold text-white">{item.title}</div>
-                  <p className="mt-2 text-sm leading-6 text-zinc-300">{item.desc}</p>
+                <div className={`relative flex flex-col justify-end p-6 ${item.featured ? "h-[330px]" : "h-[290px]"}`}>
+                  {item.featured ? (
+                    <div className="mb-4 inline-flex w-max rounded-full border border-violet-300/20 bg-violet-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-violet-200">
+                      Флагманский кейс
+                    </div>
+                  ) : null}
+                  <div className="text-xl font-semibold text-white sm:text-2xl">{item.title}</div>
+                  <p className="mt-2 max-w-[34rem] text-sm leading-6 text-zinc-300">{item.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <Chip key={tag}>{tag}</Chip>
@@ -701,8 +746,8 @@ export default function Home() {
             <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
               <MediaImage src="/cases/bpmn/bpmn-1.png" alt="BPMN схема" className="aspect-[16/10]" />
               <div className="grid gap-4 sm:grid-cols-2">
-                <InfoCard title="Сильный сигнал для рекрутера" text="BPMN усиливает профиль под project manager / operations роли, потому что показывает не только координацию, но и умение проектировать процессную логику." />
-                <InfoCard title="Почему блок стал лучше" text="Убрано повторение одного и того же смысла разными словами. Теперь блок короче, точнее и быстрее считывается." />
+                <InfoCard title="8 процессов описано" text="Есть практика формализации процессов через AS IS / TO BE, выделения ролей, точек контроля и зон потерь." />
+                <InfoCard title="6 процессов оптимизировано" text="Навык не только в визуализации схем, но и в реальной переработке логики переходов, ответственности и согласований." />
               </div>
             </div>
           }
@@ -783,7 +828,7 @@ export default function Home() {
 
                 <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]">
                   <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почта</div>
-                  <a href="mailto:anton6370@gmail.com" className="mt-3 block text-xl font-semibold tracking-tight text-white break-all sm:text-2xl">
+                  <a href="mailto:anton6370@gmail.com" className="mt-3 block text-xl font-semibold tracking-tight break-all text-white sm:text-2xl">
                     anton6370@gmail.com
                   </a>
                   <div className="mt-2 text-sm text-zinc-400">Подходит для вакансий, резюме и рабочих деталей.</div>
@@ -795,7 +840,7 @@ export default function Home() {
       </div>
 
       <div className="fixed inset-x-4 bottom-4 z-50 sm:hidden">
-        <ContactButton label="Связаться" className="w-full" />
+        <ContactButton label="Связаться" className="w-full shadow-[0_16px_40px_rgba(168,85,247,0.22)]" />
       </div>
     </main>
   );
