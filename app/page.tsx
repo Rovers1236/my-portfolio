@@ -336,17 +336,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат</div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 lg:col-span-1">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Формат работы</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Гибкий формат работы, быстрый вход в контекст и высокий темп исполнения.
+                  Hybrid / project format, быстрый вход в контекст, спокойная коммуникация и высокий темп исполнения без долгой раскачки.
                 </div>
               </div>
-              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роли, под которые профиль подходит лучше всего</div>
+              <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4 lg:col-span-1">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роли</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Project manager / producer / operations роли на стыке media, event, content и управленческого контура.
+                  Project manager / producer / operations lead для media, event, content и гибридных команд с операционным контуром.
+                </div>
+              </div>
+              <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4 sm:col-span-2 lg:col-span-1">
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Тип задач</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-200">
+                  Особенно полезен там, где много хаоса, зависимых блоков, сжатые сроки и нужно быстро собрать проект в управляемую систему.
                 </div>
               </div>
             </div>
@@ -388,30 +394,25 @@ export default function Home() {
 
             <div className="mt-8 grid gap-3 md:grid-cols-3">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Почему это работает</div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что даю проекту</div>
                 <div className="mt-3 grid gap-2.5">
-                  {strengths.slice(0, 3).map((item) => (
-                    <div key={item} className="text-sm leading-6 text-zinc-200">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4 text-sm leading-6 text-zinc-400">
-                  Снимаю перегруз с команды и делаю проект управляемым.
+                  <div className="text-sm leading-6 text-zinc-200">Собираю людей, процессы, сроки и контроль в одну систему.</div>
+                  <div className="text-sm leading-6 text-zinc-200">Удерживаю темп без перегруза команды и потери качества.</div>
+                  <div className="text-sm leading-6 text-zinc-200">Соединяю креативную часть с управленческой логикой проекта.</div>
                 </div>
               </div>
 
               <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-violet-500/12 via-fuchsia-500/6 to-orange-500/10 p-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">Роль и уровень</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-100">
-                  Руководитель проектов / продюсер / operations lead для media, event и контентных задач.
+                  Руководитель проектов / продюсер / operations lead для задач, где важно не просто исполнение, а управляемый результат.
                 </div>
               </div>
 
               <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Что считывает рекрутер</div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">Какой сигнал даёт профиль</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-200">
-                  Не исполнитель отдельного блока, а человек, который собирает и удерживает всю систему проекта.
+                  Не исполнитель отдельного блока, а человек, который собирает проект целиком, держит связи между блоками и доводит систему до результата.
                 </div>
               </div>
             </div>
@@ -563,13 +564,17 @@ export default function Home() {
             },
           ]}
           gallery={
-            <div className="grid gap-4 xl:grid-cols-12">
-              <MediaImage src="/cases/graduation/design-poster.jpg" alt="Постер Медиавыпускного" className="aspect-[4/5] xl:col-span-3 xl:row-span-2" />
-              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="xl:col-span-5" />
-              <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" title="Motion 02" className="xl:col-span-4" />
-              <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10] xl:col-span-5" />
-              <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10] xl:col-span-4" />
-              <MediaImage src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[16/10] xl:col-span-3" />
+            <div className="grid gap-4">
+              <div className="grid gap-4 xl:grid-cols-[0.92fr_1.08fr_1fr]">
+                <MediaImage src="/cases/graduation/design-poster.jpg" alt="Постер Медиавыпускного" className="aspect-[4/5]" />
+                <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-1_yehdvl.mp4" title="Motion 01" className="aspect-[16/10]" />
+                <MediaVideo src="https://res.cloudinary.com/dvb1limg4/video/upload/motion-2_njjnep.mp4" title="Motion 02" className="aspect-[16/10]" />
+              </div>
+              <div className="grid gap-4 xl:grid-cols-[1.25fr_0.95fr_0.82fr]">
+                <MediaImage src="/cases/graduation/photo-2.jpg" alt="Медиавыпускной 2" className="aspect-[16/10]" />
+                <MediaImage src="/cases/graduation/photo-4.jpg" alt="Медиавыпускной 4" className="aspect-[16/10]" />
+                <MediaImage src="/cases/graduation/photo-3.jpg" alt="Медиавыпускной 3" className="aspect-[16/10]" />
+              </div>
             </div>
           }
           assets={
